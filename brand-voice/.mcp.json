@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "notion": {
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
+    },
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp"
+    },
+    "box": {
+      "type": "http",
+      "url": "https://api.box.com/mcp"
+    },
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
+    },
+    "gong": {
+      "type": "http",
+      "url": "https://mcp.gong.io/mcp"
+    }
+  }
+}

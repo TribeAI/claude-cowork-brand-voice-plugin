@@ -1,0 +1,33 @@
+---
+# Brand Voice Plugin Settings
+# Copy this file to .claude/brand-voice.local.md and fill in your values.
+company_name: ""
+platforms:
+  notion: true
+  confluence: false
+  box: false
+  figma: false
+  gong: false
+discovery:
+  search-depth: standard    # standard | deep
+  max-sources: 15
+enforcement:
+  strictness: balanced      # strict | balanced | flexible
+  always-explain: true
+open-questions:
+  share-with-team: false
+---
+# Brand Context
+
+## Company Name
+[Your company]
+
+## Known Brand Materials
+- Notion: [URL to brand workspace or page]
+- Confluence space: [space name or URL]
+- Box folder: [URL]
+- Figma brand kit: [URL]
+- Gong call library: [filter or tag name]
+
+## Additional Context
+[Any other context about your brand that the plugin should know — target audience, industry, competitive landscape, recent brand changes, etc.]
