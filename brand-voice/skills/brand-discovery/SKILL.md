@@ -1,21 +1,18 @@
 ---
 name: brand-discovery
 description: >
-  This skill should be used when the user asks to "discover brand materials",
+  This skill orchestrates autonomous discovery of brand materials across enterprise
+  platforms (Notion, Confluence, Google Drive, Box, SharePoint, Figma, Gong, Slack).
+  It should be used when the user asks to "discover brand materials",
   "find brand documents", "search for brand guidelines", "audit brand content",
-  "what brand materials do we have", "find our style guide", "search Notion for brand",
-  "search Confluence for brand", or wants to locate scattered brand assets across
-  enterprise platforms before generating guidelines. Also triggers on
-  "discover brand voice", "brand content audit", or "find brand assets".
+  "what brand materials do we have", "find our style guide", "where are our brand docs",
+  "do we have a style guide", "discover brand voice", "brand content audit",
+  or "find brand assets".
 ---
 
 # Brand Discovery
 
-Orchestrate autonomous discovery of brand materials across enterprise platforms. This skill coordinates the brand-discovery agent to search connected platforms (Notion, Confluence, Box, Figma, Gong), triage sources, and produce a structured discovery report with open questions.
-
-## When to Use
-
-Activate when the user needs to find brand materials before generating guidelines, wants a comprehensive audit of existing brand content, or doesn't know where brand documents live. This is typically the first step before guideline generation.
+Orchestrate autonomous discovery of brand materials across enterprise platforms. This skill coordinates the brand-discovery agent to search connected platforms (Notion, Confluence, Google Drive, Box, Microsoft 365, Figma, Gong, Slack), triage sources, and produce a structured discovery report with open questions.
 
 ## Discovery Workflow
 
@@ -23,7 +20,7 @@ Activate when the user needs to find brand materials before generating guideline
 
 Read `.claude/brand-voice.local.md` if it exists. Extract:
 - Company name
-- Which platforms are enabled (notion, confluence, box, figma, gong)
+- Which platforms are enabled (notion, confluence, google-drive, box, microsoft-365, figma, gong, slack)
 - Search depth preference (standard or deep)
 - Max sources limit
 - Any known brand material locations listed under "Known Brand Materials"
@@ -78,16 +75,18 @@ Open questions arise when the discovery agent encounters ambiguity it cannot res
 
 Every open question includes an agent recommendation. Present questions as "confirm or override" — not dead ends.
 
-Refer to `references/search-strategies.md` for platform-specific search patterns and `references/source-ranking.md` for the ranking algorithm and category definitions.
-
 ## Integration with Other Skills
 
-- **Guideline Generation**: Discovery report feeds directly into the guideline-generation skill as structured input, replacing the need for users to manually gather sources.
+- **Guideline Generation**: The discovery report is returned by the brand-discovery agent via the Task tool. Pass it directly to the guideline-generation skill as structured input, replacing the need for users to manually gather sources.
 - **Brand Voice Enforcement**: Once guidelines are generated from discovery, enforcement uses them automatically.
 
-## Additional Resources
+## Error Handling
 
-### Reference Files
+- If zero platforms are connected, inform the user which platforms the plugin supports and how to connect them.
+- If all searches return empty results, flag the discovery as "low coverage" and suggest the user provide documents manually or check platform connections.
+- If a platform is connected but returns permission errors, note the gap and continue with other platforms.
+
+## Reference Files
 
 For detailed discovery patterns and algorithms, consult:
 

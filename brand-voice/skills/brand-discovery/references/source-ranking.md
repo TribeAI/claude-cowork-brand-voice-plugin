@@ -17,7 +17,9 @@ Official, approved brand documentation. Highest trust level.
 **Examples:**
 - "Acme Corp Brand Guidelines v3.2.pdf"
 - "Official Style Guide" page in Confluence Marketing space
+- Brand book in Google Drive with company-wide sharing
 - Brand book in Box with company-wide sharing
+- Official Style Guide in SharePoint Marketing site
 
 **Trust weight:** 1.0 (baseline)
 
@@ -35,6 +37,8 @@ Brand applied in practice. Shows how guidelines manifest in real content.
 - "Enterprise Sales Playbook"
 - "Customer Success Response Templates"
 - Pitch deck templates in Google Slides
+- Email templates in Outlook
+- Sales playbook on SharePoint
 
 **Trust weight:** 0.8
 
@@ -51,6 +55,7 @@ Implicit brand voice from actual communications.
 - Gong recordings of top performer calls
 - Meeting notes from brand strategy sessions
 - Customer success call transcripts
+- Slack #brand channel discussions about tone
 
 **Trust weight:** 0.6 (valuable for patterns, not prescriptive)
 
@@ -167,14 +172,14 @@ ranked_score = final_score × category_trust_weight
 - Specificity: 0.7 (specific phrases used)
 - Consistency: 0.4 (single source)
 - Category: CONVERSATIONAL (0.6)
-- **Final: (1.0×0.30 + 0.2×0.25 + 0.4×0.20 + 0.7×0.15 + 0.4×0.10) × 0.6 = 0.339**
+- **Final: (1.0×0.30 + 0.2×0.25 + 0.4×0.20 + 0.7×0.15 + 0.4×0.10) × 0.6 = 0.345**
 
 ## Triage Decision Criteria
 
 ### Include in Deep Fetch (Top 5-15 sources)
 - Ranked score > 0.5
 - All AUTHORITATIVE sources regardless of score
-- At least one source per category if available
+- At least one source per category if available (this overrides the score threshold)
 - At least one source per platform if available
 
 ### Flag for Review

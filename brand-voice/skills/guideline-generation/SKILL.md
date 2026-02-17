@@ -1,13 +1,14 @@
 ---
 name: guideline-generation
 description: >
-  This skill should be used when the user asks to "generate brand guidelines",
-  "create brand guidelines", "extract brand voice", "create guidelines from calls",
+  This skill generates, creates, or builds brand voice guidelines from source
+  materials. It should be used when the user asks to "generate brand guidelines",
+  "create a style guide", "extract brand voice", "create guidelines from calls",
   "consolidate brand materials", "analyze my sales calls for brand voice",
-  "process my brand files", "build brand guidelines from documents",
-  "create a brand voice document", or uploads brand documents, transcripts,
-  or meeting recordings for brand analysis. Also triggers when the user has a
-  discovery report and wants to synthesize it into actionable guidelines.
+  "build a brand playbook from documents", "synthesize a voice and tone guide",
+  or uploads brand documents, transcripts, or meeting recordings for brand
+  analysis. Also triggers when the user has a discovery report and wants to
+  convert it into actionable guidelines.
 ---
 
 # Guideline Generation
@@ -91,8 +92,8 @@ Every open question MUST include an agent recommendation. Turn ambiguity into "c
 
 ### 6. Quality Check
 
-Before presenting, verify via the quality-assurance agent:
-- All major sections populated
+Before presenting, verify via the quality-assurance agent (defined in `agents/quality-assurance.md`):
+- All major sections populated (including Brand Personality and Content Examples if sources support them)
 - At least 3 voice attributes with evidence
 - "We Are / We Are Not" table has 4+ rows
 - Tone matrix covers at least 3 contexts
@@ -110,30 +111,34 @@ Summarize key findings:
 
 ### 8. Save for Future Sessions
 
-Immediately after presenting, prompt the user to save so guidelines persist across sessions:
+Immediately after presenting, prompt the user to choose a save destination so guidelines persist across sessions. Offer these options:
 
-"Where should I save these guidelines so they're available in future sessions?
-1. **Notion** — I'll create a page titled 'Brand Voice Guidelines' in your workspace
-2. **Box** — I'll save a file named 'Brand Voice Guidelines' to your Box
-3. **Local file** — I'll save to `.claude/brand-voice-guidelines.md` in this project
-4. **Skip** — Don't save (guidelines will only be available in this session)"
+1. **Notion** — Create a page titled "Brand Voice Guidelines" in the user's workspace
+2. **Google Drive** — Save a file named "Brand Voice Guidelines"
+3. **Box** — Save a file named "Brand Voice Guidelines"
+4. **Local file** — Write to `.claude/brand-voice-guidelines.md` in the project root
+5. **Skip** — Guidelines remain in conversation context only
 
 **When saving to Notion:**
 - Create or update a page titled exactly **"Brand Voice Guidelines"** in the user's connected workspace. This exact title is required so the enforcement skill can find it later via search.
-- Confirm success: "Guidelines saved to Notion. You can now use `/brand-voice:enforce-voice` in any session and it will automatically load these guidelines."
+- Confirm success and inform the user that `/brand-voice:enforce-voice` will automatically load the saved guidelines in any future session.
+
+**When saving to Google Drive:**
+- Create or update a file named exactly **"Brand Voice Guidelines"** in the user's Google Drive. Same naming convention for discovery.
+- Confirm success and inform the user the enforcement skill will find them automatically.
 
 **When saving to Box:**
 - Create or update a file named exactly **"Brand Voice Guidelines"** in the user's Box. Same naming convention for discovery.
-- Confirm success: "Guidelines saved to Box. The enforcement skill will find them automatically in future sessions."
+- Confirm success and inform the user the enforcement skill will find them automatically.
 
 **When saving locally:**
 - Write the full guidelines to `.claude/brand-voice-guidelines.md` in the project root.
-- Confirm success: "Guidelines saved locally. The enforcement skill will pick them up automatically in this project."
+- Confirm success and inform the user the enforcement skill will pick them up automatically in this project.
 
 **If save fails** (service not connected, permissions issue, etc.):
 - Tell the user what went wrong
 - Suggest an alternative save method
-- Remind them the guidelines are still available in the current session since they're in conversation context
+- Remind the user the guidelines are still available in the current session
 
 After saving (or skipping), offer:
 1. Walk through the guidelines section by section
@@ -142,15 +147,12 @@ After saving (or skipping), offer:
 
 ## Privacy and Security
 
+Enforce these privacy constraints throughout the entire generation workflow, not only at output time:
 - Redact customer names and contact information from all examples
 - Anonymize company names in transcript excerpts if requested
 - Flag any sensitive information detected during processing
 
-## Additional Resources
-
-### Reference Files
-
-For detailed output templates and scoring methodology, consult:
+## Reference Files
 
 - **`references/guideline-template.md`** — Complete output template with all sections, field definitions, and formatting guidance
 - **`references/confidence-scoring.md`** — Confidence scoring methodology, thresholds, and examples

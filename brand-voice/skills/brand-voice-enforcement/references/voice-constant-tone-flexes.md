@@ -14,6 +14,8 @@ The "We Are / We Are Not" table is the anchor of brand voice. It defines the bra
 
 ### Structure
 
+The table below is an illustrative example. During enforcement, use the "We Are / We Are Not" table from the user's own brand guidelines.
+
 | We Are | We Are Not |
 |--------|------------|
 | **Confident** — we know our product and stand behind it | **Arrogant** — we never talk down to prospects or dismiss alternatives |

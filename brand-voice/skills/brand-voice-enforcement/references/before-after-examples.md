@@ -2,6 +2,8 @@
 
 Concrete examples showing how brand voice enforcement transforms generic content into on-brand output. Each example shows the generic version, the enforced version, and annotations explaining what changed and why.
 
+These examples use a fictional B2B SaaS company for illustration. During enforcement, replace all specifics (data points, product names, metrics) with data from the user's actual brand guidelines and context.
+
 ## Cold Outreach Email
 
 ### Before (Generic)

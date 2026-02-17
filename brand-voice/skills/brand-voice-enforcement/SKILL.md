@@ -1,11 +1,15 @@
 ---
 name: brand-voice-enforcement
 description: >
-  This skill should be used when the user asks to "write an email", "draft a proposal",
-  "create a pitch deck", "write a LinkedIn post", "draft sales content", or any
-  content creation request where brand voice should be applied. Also triggers on
-  "on-brand", "brand voice", "enforce voice", "apply brand guidelines",
-  "brand-aligned content", "write in our voice", or "use our brand tone".
+  This skill applies brand guidelines to content creation. It should be used when
+  the user asks to "write an email", "draft a proposal", "create a pitch deck",
+  "write a LinkedIn post", "draft a presentation", "write a Slack message",
+  "draft sales content", or any content creation request where brand voice should
+  be applied. Also triggers on "on-brand", "brand voice", "enforce voice",
+  "apply brand guidelines", "brand-aligned content", "write in our voice",
+  "use our brand tone", "make this sound like us", "rewrite this in our tone",
+  or "this doesn't sound on-brand". Not for generating guidelines from scratch
+  (use guideline-generation) or discovering brand materials (use brand-discovery).
 ---
 
 # Brand Voice Enforcement
@@ -22,11 +26,9 @@ Find the user's brand guidelines using this sequence. Stop as soon as you find t
 
 3. **Session context** — Check if brand guidelines were generated earlier in this session (via `/brand-voice:generate-guidelines`). If so, they are already in the conversation. Use them directly without searching externally.
 
-4. **Notion search** — If Notion is connected, search for a page titled exactly **"Brand Voice Guidelines"**. This is the standard title used by the guideline-generation skill when saving. If found, load its full content.
+4. **Platform search** — Check each connected platform for a document titled exactly **"Brand Voice Guidelines"**: Notion, Google Drive, Box, SharePoint (stop as soon as found on any platform). This is the standard title used by the guideline-generation skill when saving.
 
-5. **Box search** — If Box is connected, search for a file named exactly **"Brand Voice Guidelines"**. Same naming convention. If found, load its full content.
-
-6. **Ask the user** — If none of the above found guidelines, tell the user:
+5. **Ask the user** — If none of the above found guidelines, tell the user:
    "I couldn't find your brand guidelines. You can:
    - Run `/brand-voice:discover-brand` to find brand materials across your platforms
    - Run `/brand-voice:generate-guidelines` to create guidelines from documents or transcripts
@@ -74,8 +76,8 @@ Create content that:
 - Uses preferred terminology
 - Mirrors the quality and style of guideline examples
 
-For complex or long-form content, delegate to the content-generation agent.
-For high-stakes content, delegate to the quality-assurance agent for validation.
+For complex or long-form content, delegate to the content-generation agent (defined in `agents/content-generation.md`).
+For high-stakes content, delegate to the quality-assurance agent (defined in `agents/quality-assurance.md`) for validation.
 
 ### 5. Validate and Explain
 
@@ -85,7 +87,7 @@ After generating content:
 - Note any areas where guidelines were adapted for context
 - Offer to refine based on feedback
 
-If `always-explain` is true in settings, always include brand application notes.
+When `always-explain` is true in settings, include brand application notes with every response.
 
 ## Handling Conflicts
 
@@ -98,20 +100,12 @@ Default to adapting guidelines with an explanation of the tradeoff.
 
 ## Open Questions Awareness
 
-When generating content, check if the brand guidelines contain open questions:
+Open questions are unresolved brand positioning decisions flagged during guideline generation, stored in the guidelines under an "Open Questions" section. When generating content, check if the brand guidelines contain open questions:
 - If content touches an unresolved open question, note it
 - Apply the agent's recommendation from the open question unless the user specifies otherwise
 - Suggest resolving the question if it significantly impacts the content
 
-## Before/After Examples
-
-Refer to `references/before-after-examples.md` for content type-specific examples showing how brand guidelines transform generic content into on-brand output.
-
-## Additional Resources
-
-### Reference Files
-
-For detailed enforcement patterns and examples, consult:
+## Reference Files
 
 - **`references/voice-constant-tone-flexes.md`** — The "voice constant, tone flexes" mental model, "We Are / We Are Not" table structure, and tone-by-context matrix explanation
 - **`references/before-after-examples.md`** — Before/after content examples per content type showing enforcement in practice

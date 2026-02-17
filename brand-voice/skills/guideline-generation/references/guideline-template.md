@@ -1,8 +1,7 @@
 # Brand Guidelines Output Template
 
-The complete structure for generated brand voice guidelines. Fill each section based on discovered and analyzed sources.
+The complete structure for generated brand voice guidelines. Fill each section based on discovered and analyzed sources. The following is a raw markdown template — copy and fill the sections below. Omit sections with no data rather than including empty placeholders.
 
-```markdown
 # [Company Name] Brand Voice Guidelines
 
 ## Generation Metadata
@@ -226,7 +225,8 @@ Ranked by effectiveness (from conversation analysis, if available):
 | # | Source | Platform | Type | Date | Key Sections Used | Confidence |
 |---|--------|----------|------|------|-------------------|------------|
 | 1 | [title] | [platform] | [AUTHORITATIVE/OPERATIONAL/etc.] | [date] | [sections] | [H/M/L] |
-```
+
+---
 
 ## Template Usage Notes
 

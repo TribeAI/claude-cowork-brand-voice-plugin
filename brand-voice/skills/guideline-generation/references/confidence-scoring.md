@@ -19,7 +19,7 @@ The guideline section is well-supported and actionable.
 ### Medium Confidence
 The section is reasonable but could benefit from more data or team confirmation.
 
-**Criteria:**
+**Criteria (must meet at least 2):**
 - 1-2 corroborating sources
 - Inferred from patterns rather than explicit instruction
 - Minor inconsistencies resolved via recency or authority
@@ -31,7 +31,7 @@ The section is reasonable but could benefit from more data or team confirmation.
 ### Low Confidence
 The section is a best-effort recommendation. Team review strongly recommended.
 
-**Criteria:**
+**Criteria (must meet at least 2):**
 - Single source only
 - Primarily inferred from indirect evidence
 - Significant interpretation required
@@ -88,6 +88,11 @@ Convert scores: High = 1.0, Medium = 0.6, Low = 0.3
 - Terminology: High (1.0 x 0.15 = 0.15)
 - Language: Low (0.3 x 0.10 = 0.03)
 - **Overall: 0.75 = Medium-High confidence**
+
+**Aggregate score thresholds:**
+- 0.85–1.0 = High
+- 0.60–0.84 = Medium
+- Below 0.60 = Low
 
 ## Presentation
 

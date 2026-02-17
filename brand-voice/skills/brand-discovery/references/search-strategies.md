@@ -89,6 +89,90 @@ Cloud file storage — official brand documents, shared decks, and style guides 
 - Search for recently modified brand documents to find the latest version
 - Use Box metadata search to filter by content type or custom attributes
 
+## Google Drive
+
+Google Drive stores shared brand documents, marketing materials, and official style guides.
+
+### Query Patterns
+
+**Folder search:**
+- "Brand Guidelines"
+- "Marketing"
+- "Brand Assets"
+- "Style Guide"
+
+**Document search:**
+- "brand guide" (PDFs, Google Docs, Google Slides)
+- "style guide"
+- "messaging framework"
+- "brand standards"
+- "brand voice"
+
+### Tips
+- Check shared drives — brand materials often live in team-wide shared drives
+- Look for recently modified brand documents to find the latest version
+- Search by owner (marketing team members) to surface brand-owned content
+- Google Docs and Slides are common formats for living brand documents
+- Check for Google Slides presentations with brand overview decks
+
+## Microsoft 365 (SharePoint / OneDrive)
+
+Enterprise organizations often centralize brand documentation on SharePoint sites.
+
+### Query Patterns
+
+**SharePoint site search:**
+- Search marketing or communications SharePoint sites
+- "brand guidelines"
+- "style guide"
+- "brand standards"
+- "messaging framework"
+
+**Document library search:**
+- Check document libraries in marketing/communications sites
+- "brand guide" (Word, PDF, PowerPoint)
+- "brand book"
+- "editorial guidelines"
+
+**OneDrive search:**
+- "brand" files in shared OneDrive folders
+- "style guide" shared with the organization
+
+### Tips
+- Check marketing/communications SharePoint sites first — most common location for brand docs
+- Search document libraries for PDF brand guides and PowerPoint brand decks
+- Look for brand-tagged content using SharePoint metadata
+- OneDrive shared folders may contain working drafts of brand materials
+- Use SharePoint search and document library tools when available
+
+## Slack
+
+Slack channels contain informal brand discussions, decisions, and evolving brand voice patterns.
+
+### Query Patterns
+
+**Channel search:**
+- Look for channels: #brand, #marketing, #brand-voice, #style-guide, #creative
+- Check channel topics and descriptions for brand-related content
+
+**Message search:**
+- "brand guidelines"
+- "brand voice"
+- "tone of voice"
+- "style guide"
+- "brand update"
+
+**Pinned messages:**
+- Check pinned messages in #brand and #marketing channels
+- Pinned items often contain approved brand resources or decisions
+
+### Tips
+- Search #brand and #marketing channels first — most likely to contain brand discussions
+- Look for pinned messages — teams often pin brand guidelines and decisions
+- Find brand discussion threads for context on brand evolution
+- Slack is a conversational source — ranks as CONVERSATIONAL tier in source triage
+- Recent messages may reveal brand changes not yet documented formally
+
 ## Gong (Conversation Intelligence)
 
 Sales call transcripts reveal how the brand actually communicates in practice.
@@ -140,9 +224,12 @@ Visual brand elements inform voice and tone indirectly.
 ### Maximizing Coverage
 1. Start with Notion AI Search (broadest coverage via federation)
 2. Follow up with Confluence for enterprise documentation
-3. Check Box for official brand documents
-4. Search Gong for conversational brand patterns
-5. Review Figma for design-embedded brand guidelines
+3. Check Google Drive for official brand documents
+4. Check Box for cloud-stored brand documents
+5. Search SharePoint/OneDrive for enterprise files
+6. Search Slack for brand discussions and decisions
+7. Search Gong for conversational brand patterns
+8. Review Figma for design-embedded brand guidelines
 
 ### Avoiding Duplicates
 - Track source URLs to detect the same document across platforms

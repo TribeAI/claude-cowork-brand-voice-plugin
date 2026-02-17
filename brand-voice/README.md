@@ -1,6 +1,6 @@
 # Brand Voice Plugin
 
-Transforms scattered brand documents and conversation transcripts into enforceable AI guardrails. Searches across Confluence, Box, and conversation intelligence platforms like Gong to discover how your company actually communicates. Creates LLM-ready brand guidelines and continuously validates AI-generated content — from sales emails to marketing copy — ensuring every output matches your established voice, tone, and positioning. Surfaces open branding questions for team discussion when ambiguity is found.
+Transforms scattered brand documents and conversation transcripts into enforceable AI guardrails. Searches across Confluence, Google Drive, Box, SharePoint, Slack, and conversation intelligence platforms like Gong to discover how your company actually communicates. Creates LLM-ready brand guidelines and continuously validates AI-generated content — from sales emails to marketing copy — ensuring every output matches your established voice, tone, and positioning. Surfaces open branding questions for team discussion when ambiguity is found.
 
 ## Features
 
@@ -41,11 +41,21 @@ When the plugin encounters ambiguity it can't resolve — conflicting documents,
 
 | Connector | URL | Purpose |
 |-----------|-----|---------|
-| **Notion** | `https://mcp.notion.com/mcp` | Discovery backbone — federates across connected Google Drive, SharePoint, OneDrive, Slack, Jira, so users get Google Drive coverage without a dedicated connector. Also stores output guidelines. |
+| **Notion** | `https://mcp.notion.com/mcp` | Discovery backbone — federates across connected Google Drive, SharePoint, OneDrive, Slack, Jira. Also stores output guidelines. |
 | **Atlassian** | `https://mcp.atlassian.com/v1/mcp` | Deep Confluence search + Jira context for Atlassian-heavy enterprises |
 | **Box** | `https://mcp.box.com` | Cloud file storage — official brand docs, shared decks, and style guides often live here |
+| **Microsoft 365** | `https://microsoft365.mcp.claude.com/mcp` | SharePoint, OneDrive, Outlook, Teams — enterprise document storage and email templates |
 | **Figma** | `https://mcp.figma.com/mcp` | Brand design systems — color, typography, design tokens inform voice |
 | **Gong** | `https://mcp.gong.io/mcp` | Enterprise conversation intelligence — sales call transcripts and analysis |
+
+### Native Integrations
+
+These platforms are native Claude integrations — no MCP connector install needed. They are available as tools when the user connects them in Claude Desktop or Cowork.
+
+| Integration | Purpose |
+|-------------|---------|
+| **Google Drive** | Shared brand documents, style guides, marketing materials, Google Docs and Slides |
+| **Slack** | Brand discussions, channel searches, pinned brand guidelines, informal voice patterns |
 
 ## Quick Start
 
@@ -65,7 +75,7 @@ Copy `settings/brand-voice.local.md.example` to `.claude/brand-voice.local.md` i
 brand-voice/
 ├── .claude-plugin/
 │   └── plugin.json                              # Plugin manifest
-├── .mcp.json                                    # 5 MCP server connections
+├── .mcp.json                                    # 6 MCP server connections
 ├── README.md
 ├── agents/
 │   ├── brand-discovery.md                       # Autonomous platform search agent
@@ -111,6 +121,7 @@ brand-voice/
 - Open questions are a feature, not a failure — every ambiguity includes a recommendation
 - Progressive disclosure — frontmatter is lean, SKILL.md is focused, detail lives in references/
 - Notion AI Search as federated discovery engine — one API searches 8+ platforms via connected sources
+- Google Drive and Slack are native Claude integrations — no MCP connector needed
 
 ## License
 

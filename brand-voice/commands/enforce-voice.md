@@ -9,9 +9,8 @@ Find brand guidelines using this sequence (stop as soon as found):
 1. `.claude/brand-voice.local.md` — per-project local config
 2. Local guidelines file — check for `.claude/brand-voice-guidelines.md` (saved by the guideline-generation skill)
 3. Session context — check if guidelines were generated earlier in this conversation
-4. Notion search — look for a page titled exactly "Brand Voice Guidelines"
-5. Box search — look for a file named exactly "Brand Voice Guidelines"
-6. If not found, ask the user to run `/brand-voice:discover-brand`, `/brand-voice:generate-guidelines`, or paste guidelines directly
+4. Platform search — search each connected platform for a document titled exactly "Brand Voice Guidelines": Notion, Google Drive, Box, SharePoint (check in this order, stop as soon as found)
+5. If not found, ask the user to run `/brand-voice:discover-brand`, `/brand-voice:generate-guidelines`, or paste guidelines directly
 
 Once guidelines are loaded, follow the brand-voice-enforcement skill instructions to:
 1. Analyze the content request (type, audience, key messages, requirements)
