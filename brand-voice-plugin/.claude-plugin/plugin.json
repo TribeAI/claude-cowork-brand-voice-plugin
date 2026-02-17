@@ -1,0 +1,39 @@
+{
+  "name": "brand-voice-plugin",
+  "version": "1.0.0",
+  "description": "Enforce brand voice, convert messy brand docs to LLM-ready format, and generate brand guidelines from conversations",
+  "author": "Tribe AI",
+  "main_skill": "skills/brand-voice-enforcement.md",
+  "skills": [
+    "skills/brand-voice-enforcement.md",
+    "skills/document-conversion.md",
+    "skills/guideline-generation.md"
+  ],
+  "commands": [
+    "commands/enforce-voice.md",
+    "commands/convert-docs.md",
+    "commands/generate-guidelines.md"
+  ],
+  "connectors": [
+    "canva",
+    "figma",
+    "linear",
+    "slack",
+    "notion",
+    "google-drive",
+    "granola",
+    "gamma"
+  ],
+  "sub_agents": [
+    "document-analysis",
+    "conversation-analysis",
+    "content-generation",
+    "quality-assurance"
+  ],
+  "tags": ["sales", "marketing", "brand", "content-creation", "guidelines"],
+  "permissions": {
+    "file_access": true,
+    "network_access": true,
+    "mcp_servers": true
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "mcpServers": {
+    "canva": {
+      "url": "https://mcp.canva.com/mcp",
+      "description": "Create on-brand visual content and graphics"
+    },
+    "figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "description": "Access brand design assets and visual guidelines"
+    },
+    "linear": {
+      "url": "https://mcp.linear.app/mcp",
+      "description": "Track brand guideline updates and content requests"
+    },
+    "slack": {
+      "url": "https://mcp.slack.com/mcp",
+      "description": "Share brand guidelines with team"
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp",
+      "description": "Store and retrieve brand guidelines from Notion workspace"
+    },
+    "google-drive": {
+      "url": "https://mcp.googledrive.com/mcp",
+      "description": "Access brand documents from Google Drive folders"
+    },
+    "granola": {
+      "url": "https://mcp.granola.ai/mcp",
+      "description": "Access meeting transcripts for brand voice analysis"
+    },
+    "gamma": {
+      "url": "https://mcp.gamma.app/mcp",
+      "description": "Generate on-brand presentations"
+    }
+  },
+  "requiredPermissions": [
+    "read_files",
+    "write_files",
+    "network_requests"
+  ]
+}
