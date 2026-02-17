@@ -1,6 +1,6 @@
 # Brand Voice Plugin
 
-Transforms scattered brand documents and conversation transcripts into enforceable AI guardrails. Searches across Confluence, Google Drive, Box, and conversation intelligence platforms like Gong to discover how your company actually communicates. Creates LLM-ready brand guidelines and continuously validates AI-generated content — from sales emails to marketing copy — ensuring every output matches your established voice, tone, and positioning. Surfaces open branding questions for team discussion when ambiguity is found.
+Transforms scattered brand documents and conversation transcripts into enforceable AI guardrails. Searches across Confluence, Google Drive, and conversation intelligence platforms like Gong to discover how your company actually communicates. Creates LLM-ready brand guidelines and continuously validates AI-generated content — from sales emails to marketing copy — ensuring every output matches your established voice, tone, and positioning. Surfaces open branding questions for team discussion when ambiguity is found.
 
 ## Features
 
@@ -43,7 +43,7 @@ When the plugin encounters ambiguity it can't resolve — conflicting documents,
 |-----------|-----|---------|
 | **Notion** | `https://mcp.notion.com/mcp` | Discovery backbone — federates across connected Google Drive, SharePoint, OneDrive, Slack, Jira. Also stores output guidelines. |
 | **Atlassian** | `https://mcp.atlassian.com/v1/mcp` | Deep Confluence search + Jira context for Atlassian-heavy enterprises |
-| **Box** | `https://api.box.com/mcp` | Enterprise content management — official brand docs often live here |
+| **Google Drive** | `https://developers.google.com/drive/mcp` | Cloud file storage — official brand docs, shared decks, and style guides often live here |
 | **Figma** | `https://mcp.figma.com/mcp` | Brand design systems — color, typography, design tokens inform voice |
 | **Gong** | `https://mcp.gong.io/mcp` | Enterprise conversation intelligence — sales call transcripts and analysis |
 

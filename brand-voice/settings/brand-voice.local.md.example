@@ -5,7 +5,7 @@ company_name: ""
 platforms:
   notion: true
   confluence: false
-  box: false
+  google-drive: false
   figma: false
   gong: false
 discovery:
@@ -25,7 +25,7 @@ open-questions:
 ## Known Brand Materials
 - Notion: [URL to brand workspace or page]
 - Confluence space: [space name or URL]
-- Box folder: [URL]
+- Google Drive folder: [URL]
 - Figma brand kit: [URL]
 - Gong call library: [filter or tag name]
 

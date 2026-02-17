@@ -7,7 +7,7 @@ description: >
 
   <example>
   Context: User wants to create brand guidelines but doesn't know what materials exist.
-  user: "I need brand guidelines but our stuff is scattered everywhere — Notion, Confluence, Box..."
+  user: "I need brand guidelines but our stuff is scattered everywhere — Notion, Confluence, Google Drive..."
   assistant: "I'll search across your connected platforms to find all brand-related materials."
   <commentary>
   User has scattered brand materials across multiple platforms. The brand-discovery agent
@@ -56,7 +56,7 @@ Run parallel searches across all connected platforms. For each platform, execute
 - Target: "brand style guide", "voice and tone", "messaging"
 - Check marketing and sales spaces
 
-**Box:**
+**Google Drive:**
 - Search for brand documents, marketing materials, style guides
 - Check for folders named "Brand", "Marketing", "Guidelines"
 

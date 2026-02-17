@@ -14,17 +14,25 @@ Apply existing brand guidelines to all sales and marketing content generation. L
 
 ## Loading Brand Guidelines
 
-Check for existing brand guidelines in this order:
-1. `.claude/brand-voice.local.md` — per-project settings and brand context
-2. Connected Notion workspace — search for "Brand Guidelines" or "Brand Voice" pages
-3. Any guideline document generated in the current session
+Find the user's brand guidelines using this sequence. Stop as soon as you find them:
 
-If no guidelines are found, inform the user and suggest:
-- Discover brand materials: `/brand-voice:discover-brand`
-- Generate guidelines from existing sources: `/brand-voice:generate-guidelines`
-- Provide guidelines manually or point to a file
+1. **Local config** — Read `.claude/brand-voice.local.md` for per-project brand context and settings. If it contains or references full guidelines, use them.
 
-Read `.claude/brand-voice.local.md` for enforcement settings:
+2. **Session context** — Check if brand guidelines were generated earlier in this session (via `/brand-voice:generate-guidelines`). If so, they are already in the conversation. Use them directly without searching externally.
+
+3. **Notion search** — If Notion is connected, search for a page titled exactly **"Brand Voice Guidelines"**. This is the standard title used by the guideline-generation skill when saving. If found, load its full content.
+
+4. **Google Drive search** — If Google Drive is connected, search for a file named exactly **"Brand Voice Guidelines"**. Same naming convention. If found, load its full content.
+
+5. **Ask the user** — If none of the above found guidelines, tell the user:
+   "I couldn't find your brand guidelines. You can:
+   - Run `/brand-voice:discover-brand` to find brand materials across your platforms
+   - Run `/brand-voice:generate-guidelines` to create guidelines from documents or transcripts
+   - Paste guidelines directly into this chat or point me to a file"
+
+   Wait for the user to provide guidelines before proceeding.
+
+Also read `.claude/brand-voice.local.md` for enforcement settings (even if guidelines came from another source):
 - `strictness`: strict | balanced | flexible
 - `always-explain`: whether to always explain brand choices
 
