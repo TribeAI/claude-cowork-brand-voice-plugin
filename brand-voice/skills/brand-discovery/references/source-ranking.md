@@ -17,7 +17,7 @@ Official, approved brand documentation. Highest trust level.
 **Examples:**
 - "Acme Corp Brand Guidelines v3.2.pdf"
 - "Official Style Guide" page in Confluence Marketing space
-- Brand book in Google Drive with company-wide sharing
+- Brand book in Box with company-wide sharing
 
 **Trust weight:** 1.0 (baseline)
 

@@ -1,7 +1,7 @@
 {
   "name": "brand-voice",
   "version": "1.0.0",
-  "description": "Transforms scattered brand documents and conversation transcripts into enforceable AI guardrails. Searches across Confluence, Google Drive, and conversation intelligence platforms like Gong to discover how your company actually communicates. Creates LLM-ready brand guidelines and continuously validates AI-generated content — from sales emails to marketing copy — ensuring every output matches your established voice, tone, and positioning. Surfaces open branding questions for team discussion when ambiguity is found.",
+  "description": "Transforms scattered brand documents and conversation transcripts into enforceable AI guardrails. Searches across Confluence, Box, and conversation intelligence platforms like Gong to discover how your company actually communicates. Creates LLM-ready brand guidelines and continuously validates AI-generated content — from sales emails to marketing copy — ensuring every output matches your established voice, tone, and positioning. Surfaces open branding questions for team discussion when ambiguity is found.",
   "author": {
     "name": "Tribe AI"
   },

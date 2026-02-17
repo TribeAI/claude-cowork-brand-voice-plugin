@@ -18,13 +18,15 @@ Find the user's brand guidelines using this sequence. Stop as soon as you find t
 
 1. **Local config** — Read `.claude/brand-voice.local.md` for per-project brand context and settings. If it contains or references full guidelines, use them.
 
-2. **Session context** — Check if brand guidelines were generated earlier in this session (via `/brand-voice:generate-guidelines`). If so, they are already in the conversation. Use them directly without searching externally.
+2. **Local guidelines file** — Check for `.claude/brand-voice-guidelines.md` (saved by the guideline-generation skill). If found, load its full content. This is the local save path used when the user chose "Local file" during guideline generation.
 
-3. **Notion search** — If Notion is connected, search for a page titled exactly **"Brand Voice Guidelines"**. This is the standard title used by the guideline-generation skill when saving. If found, load its full content.
+3. **Session context** — Check if brand guidelines were generated earlier in this session (via `/brand-voice:generate-guidelines`). If so, they are already in the conversation. Use them directly without searching externally.
 
-4. **Google Drive search** — If Google Drive is connected, search for a file named exactly **"Brand Voice Guidelines"**. Same naming convention. If found, load its full content.
+4. **Notion search** — If Notion is connected, search for a page titled exactly **"Brand Voice Guidelines"**. This is the standard title used by the guideline-generation skill when saving. If found, load its full content.
 
-5. **Ask the user** — If none of the above found guidelines, tell the user:
+5. **Box search** — If Box is connected, search for a file named exactly **"Brand Voice Guidelines"**. Same naming convention. If found, load its full content.
+
+6. **Ask the user** — If none of the above found guidelines, tell the user:
    "I couldn't find your brand guidelines. You can:
    - Run `/brand-voice:discover-brand` to find brand materials across your platforms
    - Run `/brand-voice:generate-guidelines` to create guidelines from documents or transcripts

@@ -63,7 +63,7 @@ Enterprises often store official brand documentation in Confluence spaces.
 - Look for pages with many watchers — indicates important shared content
 - Search attachments for PDF brand guides uploaded to Confluence pages
 
-## Google Drive
+## Box
 
 Cloud file storage — official brand documents, shared decks, and style guides frequently live here.
 
@@ -77,16 +77,17 @@ Cloud file storage — official brand documents, shared decks, and style guides 
 - "Sales Collateral"
 
 **Document search:**
-- "brand guide" (PDF, DOCX, Google Docs)
-- "style guide" (PDF, DOCX, Google Docs)
+- "brand guide" (PDF, DOCX, Word)
+- "style guide" (PDF, DOCX, Word)
 - "messaging document"
 - "brand standards"
 
 ### Tips
-- Google Drive often contains the "source of truth" brand guides as Google Docs or PDFs
-- Check shared drives with company-wide access
+- Box often contains the "source of truth" brand guides as PDFs or Word docs
+- Check shared folders with company-wide access
 - Look for folders shared with the marketing or brand team
 - Search for recently modified brand documents to find the latest version
+- Use Box metadata search to filter by content type or custom attributes
 
 ## Gong (Conversation Intelligence)
 
@@ -139,7 +140,7 @@ Visual brand elements inform voice and tone indirectly.
 ### Maximizing Coverage
 1. Start with Notion AI Search (broadest coverage via federation)
 2. Follow up with Confluence for enterprise documentation
-3. Check Google Drive for official brand documents
+3. Check Box for official brand documents
 4. Search Gong for conversational brand patterns
 5. Review Figma for design-embedded brand guidelines
 

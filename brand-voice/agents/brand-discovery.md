@@ -7,7 +7,7 @@ description: >
 
   <example>
   Context: User wants to create brand guidelines but doesn't know what materials exist.
-  user: "I need brand guidelines but our stuff is scattered everywhere — Notion, Confluence, Google Drive..."
+  user: "I need brand guidelines but our stuff is scattered everywhere — Notion, Confluence, Box..."
   assistant: "I'll search across your connected platforms to find all brand-related materials."
   <commentary>
   User has scattered brand materials across multiple platforms. The brand-discovery agent
@@ -56,7 +56,7 @@ Run parallel searches across all connected platforms. For each platform, execute
 - Target: "brand style guide", "voice and tone", "messaging"
 - Check marketing and sales spaces
 
-**Google Drive:**
+**Box:**
 - Search for brand documents, marketing materials, style guides
 - Check for folders named "Brand", "Marketing", "Guidelines"
 
@@ -81,7 +81,7 @@ Categorize every discovered source into one of five tiers:
 - **CONTEXTUAL**: Design files, competitor mentions, industry analyses. Inform but don't define.
 - **STALE**: Outdated docs superseded by newer versions. Flag but deprioritize.
 
-Apply ranking weights (see references/source-ranking.md for details):
+Apply ranking weights (see skills/brand-discovery/references/source-ranking.md for details):
 1. Recency — newer sources outrank older
 2. Explicitness — explicit brand instructions outrank implicit patterns
 3. Authority — official docs outrank informal materials

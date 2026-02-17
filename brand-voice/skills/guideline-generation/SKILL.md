@@ -114,7 +114,7 @@ Immediately after presenting, prompt the user to save so guidelines persist acro
 
 "Where should I save these guidelines so they're available in future sessions?
 1. **Notion** — I'll create a page titled 'Brand Voice Guidelines' in your workspace
-2. **Google Drive** — I'll save a file named 'Brand Voice Guidelines' to your Drive
+2. **Box** — I'll save a file named 'Brand Voice Guidelines' to your Box
 3. **Local file** — I'll save to `.claude/brand-voice-guidelines.md` in this project
 4. **Skip** — Don't save (guidelines will only be available in this session)"
 
@@ -122,9 +122,9 @@ Immediately after presenting, prompt the user to save so guidelines persist acro
 - Create or update a page titled exactly **"Brand Voice Guidelines"** in the user's connected workspace. This exact title is required so the enforcement skill can find it later via search.
 - Confirm success: "Guidelines saved to Notion. You can now use `/brand-voice:enforce-voice` in any session and it will automatically load these guidelines."
 
-**When saving to Google Drive:**
-- Create or update a file named exactly **"Brand Voice Guidelines"** in the user's Drive. Same naming convention for discovery.
-- Confirm success: "Guidelines saved to Google Drive. The enforcement skill will find them automatically in future sessions."
+**When saving to Box:**
+- Create or update a file named exactly **"Brand Voice Guidelines"** in the user's Box. Same naming convention for discovery.
+- Confirm success: "Guidelines saved to Box. The enforcement skill will find them automatically in future sessions."
 
 **When saving locally:**
 - Write the full guidelines to `.claude/brand-voice-guidelines.md` in the project root.

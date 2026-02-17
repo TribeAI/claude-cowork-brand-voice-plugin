@@ -8,9 +8,9 @@
       "type": "http",
       "url": "https://mcp.atlassian.com/v1/mcp"
     },
-    "google-drive": {
+    "box": {
       "type": "http",
-      "url": "https://developers.google.com/drive/mcp"
+      "url": "https://mcp.box.com"
     },
     "figma": {
       "type": "http",

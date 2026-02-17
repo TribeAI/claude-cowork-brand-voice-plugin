@@ -11,7 +11,7 @@ description: >
 
 # Brand Discovery
 
-Orchestrate autonomous discovery of brand materials across enterprise platforms. This skill coordinates the brand-discovery agent to search connected platforms (Notion, Confluence, Google Drive, Figma, Gong), triage sources, and produce a structured discovery report with open questions.
+Orchestrate autonomous discovery of brand materials across enterprise platforms. This skill coordinates the brand-discovery agent to search connected platforms (Notion, Confluence, Box, Figma, Gong), triage sources, and produce a structured discovery report with open questions.
 
 ## When to Use
 
@@ -23,7 +23,7 @@ Activate when the user needs to find brand materials before generating guideline
 
 Read `.claude/brand-voice.local.md` if it exists. Extract:
 - Company name
-- Which platforms are enabled (notion, confluence, google-drive, figma, gong)
+- Which platforms are enabled (notion, confluence, box, figma, gong)
 - Search depth preference (standard or deep)
 - Max sources limit
 - Any known brand material locations listed under "Known Brand Materials"
