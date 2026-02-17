@@ -1,7 +1,7 @@
 # Brand Voice Plugin for Claude Cowork
 
 ## Overview
-The Brand Voice Plugin helps sales teams maintain consistent brand voice across all content creation by enforcing existing guidelines, converting messy brand documents to LLM-ready format, and generating new guidelines from conversations.
+The Brand Voice Plugin helps sales teams maintain consistent brand voice across all content creation. Generate brand guidelines from your existing documents and sales calls, then enforce those guidelines whenever you create content.
 
 ## Installation
 
@@ -10,14 +10,7 @@ The Brand Voice Plugin helps sales teams maintain consistent brand voice across 
 2. Navigate to Cowork tab
 3. Click "Plugins" in sidebar
 4. Select "Upload Plugin"
-5. Navigate to the `brand-voice-plugin` directory
-6. Click "Install"
-
-### From Command Line
-```bash
-# Add to Cowork plugins directory
-cp -r ~/brand-voice-plugin ~/.cowork/plugins/brand-voice-plugin
-```
+5. Upload the `brand-voice-plugin.zip` file
 
 ## Features
 
@@ -32,26 +25,23 @@ Automatically apply existing brand guidelines to all sales content.
 Draft a cold outreach email to a VP of Sales at a mid-market SaaS company
 ```
 
-### 2. Document Conversion
-Convert scattered brand documents (PDFs, PowerPoints, Google Docs) into a unified LLM-ready format.
-
-**Slash Command:** `/brand:convert-docs`
-
-**Example:**
-```
-/brand:convert-docs
-Convert the 3 brand documents in my Google Drive folder to a single guideline doc
-```
-
-### 3. Guideline Generation
-Generate comprehensive brand guidelines from recorded sales conversations.
+### 2. Guideline Generation
+Generate comprehensive brand guidelines from documents, sales call transcripts, or both.
 
 **Slash Command:** `/brand:generate-guidelines`
 
-**Example:**
+**Examples:**
+```
+/brand:generate-guidelines
+Convert my pitch deck and style guide into brand guidelines
+```
 ```
 /brand:generate-guidelines
 Analyze my last 10 customer calls and create brand voice guidelines
+```
+```
+/brand:generate-guidelines
+I have 3 brand docs and 5 sales call transcripts -- generate unified guidelines from all of them
 ```
 
 ## Required Connectors
@@ -69,10 +59,10 @@ This plugin works best with the following MCP connectors:
 
 ## Quick Start
 
-1. Install the plugin using one of the methods above
+1. Install the plugin using the upload method above
 2. Connect required MCP servers in Cowork settings
-3. Upload existing brand documents OR prepare meeting transcripts
-4. Use `/brand:convert-docs` or `/brand:generate-guidelines` to create your first brand guide
+3. Gather your brand documents and/or sales call transcripts
+4. Use `/brand:generate-guidelines` to create your brand voice guidelines
 5. Use `/brand:enforce-voice` when creating sales content
 
 ## File Structure
@@ -80,16 +70,21 @@ This plugin works best with the following MCP connectors:
 ```
 brand-voice-plugin/
 ├── .claude-plugin/
-│   └── plugin.json          # Plugin configuration
-├── .mcp.json                # MCP server connections
-├── commands/                # Slash commands
-│   ├── enforce-voice.md
-│   ├── convert-docs.md
-│   └── generate-guidelines.md
-├── skills/                  # Auto-triggered skills
-│   ├── brand-voice-enforcement.md
-│   ├── document-conversion.md
-│   └── guideline-generation.md
+│   └── plugin.json                        # Plugin manifest
+├── .mcp.json                              # MCP server connections
+├── agents/                                # Specialized sub-agents
+│   ├── content-generation.md              # Generates brand-aligned content
+│   ├── conversation-analysis.md           # Analyzes sales call transcripts
+│   ├── document-analysis.md               # Parses and extracts from documents
+│   └── quality-assurance.md               # Validates content and guidelines
+├── commands/                              # Slash commands
+│   ├── enforce-voice.md                   # /brand:enforce-voice
+│   └── generate-guidelines.md             # /brand:generate-guidelines
+├── skills/                                # Auto-triggered skills (directories)
+│   ├── brand-voice-enforcement/
+│   │   └── SKILL.md                       # Brand enforcement logic
+│   └── guideline-generation/
+│       └── SKILL.md                       # Guideline generation logic
 └── README.md
 ```
 

@@ -1,41 +1,36 @@
 {
   "mcpServers": {
     "canva": {
-      "url": "https://mcp.canva.com/mcp",
-      "description": "Create on-brand visual content and graphics"
+      "type": "http",
+      "url": "https://mcp.canva.com/mcp"
     },
     "figma": {
-      "url": "https://mcp.figma.com/mcp",
-      "description": "Access brand design assets and visual guidelines"
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
     },
     "linear": {
-      "url": "https://mcp.linear.app/mcp",
-      "description": "Track brand guideline updates and content requests"
+      "type": "http",
+      "url": "https://mcp.linear.app/mcp"
     },
     "slack": {
-      "url": "https://mcp.slack.com/mcp",
-      "description": "Share brand guidelines with team"
+      "type": "http",
+      "url": "https://mcp.slack.com/mcp"
     },
     "notion": {
-      "url": "https://mcp.notion.com/mcp",
-      "description": "Store and retrieve brand guidelines from Notion workspace"
+      "type": "http",
+      "url": "https://mcp.notion.com/mcp"
     },
     "google-drive": {
-      "url": "https://mcp.googledrive.com/mcp",
-      "description": "Access brand documents from Google Drive folders"
+      "type": "http",
+      "url": "https://mcp.googledrive.com/mcp"
     },
     "granola": {
-      "url": "https://mcp.granola.ai/mcp",
-      "description": "Access meeting transcripts for brand voice analysis"
+      "type": "http",
+      "url": "https://mcp.granola.ai/mcp"
     },
     "gamma": {
-      "url": "https://mcp.gamma.app/mcp",
-      "description": "Generate on-brand presentations"
+      "type": "http",
+      "url": "https://mcp.gamma.app/mcp"
     }
-  },
-  "requiredPermissions": [
-    "read_files",
-    "write_files",
-    "network_requests"
-  ]
+  }
 }
