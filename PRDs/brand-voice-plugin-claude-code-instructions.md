@@ -49,11 +49,14 @@ Create `.claude-plugin/plugin.json` with the following content:
     "commands/generate-guidelines.md"
   ],
   "connectors": [
+    "canva",
+    "figma",
+    "linear",
+    "slack",
     "notion",
     "google-drive",
     "granola",
-    "gamma",
-    "slack"
+    "gamma"
   ],
   "sub_agents": [
     "document-analysis",
@@ -77,9 +80,29 @@ Create `.mcp.json` with the following content:
 ```json
 {
   "mcpServers": {
+    "canva": {
+      "url": "https://mcp.canva.com/mcp",
+      "description": "Create on-brand visual content and graphics"
+    },
+    "figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "description": "Access brand design assets and visual guidelines"
+    },
+    "linear": {
+      "url": "https://mcp.linear.app/mcp",
+      "description": "Track brand guideline updates and content requests"
+    },
+    "slack": {
+      "url": "https://mcp.slack.com/mcp",
+      "description": "Share brand guidelines with team"
+    },
     "notion": {
       "url": "https://mcp.notion.com/mcp",
       "description": "Store and retrieve brand guidelines from Notion workspace"
+    },
+    "google-drive": {
+      "url": "https://mcp.googledrive.com/mcp",
+      "description": "Access brand documents from Google Drive folders"
     },
     "granola": {
       "url": "https://mcp.granola.ai/mcp",
@@ -88,10 +111,6 @@ Create `.mcp.json` with the following content:
     "gamma": {
       "url": "https://mcp.gamma.app/mcp",
       "description": "Generate on-brand presentations"
-    },
-    "slack": {
-      "url": "https://mcp.slack.com/mcp",
-      "description": "Share brand guidelines with team"
     }
   },
   "requiredPermissions": [
@@ -187,11 +206,14 @@ Analyze my last 10 customer calls and create brand voice guidelines
 
 This plugin works best with the following MCP connectors:
 
+- **Canva** (for creating on-brand visual content)
+- **Figma** (for accessing brand design assets)
+- **Linear** (for tracking brand guideline updates)
+- **Slack** (for sharing guidelines with team)
 - **Notion** (for storing guidelines)
 - **Google Drive** (for accessing documents)
 - **Granola** (for meeting transcripts)
 - **Gamma** (for presentation generation)
-- **Slack** (for sharing guidelines)
 
 ## Quick Start
 
