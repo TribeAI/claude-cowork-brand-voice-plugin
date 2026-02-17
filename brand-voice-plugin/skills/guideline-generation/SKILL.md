@@ -286,7 +286,7 @@ Before presenting the final document, verify:
 - Guidelines are actionable, not just descriptive
 - No personally identifiable information exposed
 
-## Step 7: Present to User
+## Step 7: Present and Save
 
 Summarize findings:
 "Brand guidelines generated!
@@ -299,15 +299,31 @@ Summarize findings:
 **Key Findings:**
 1. Strongest voice attribute: [attribute]
 2. Most effective message: [message]
-3. Surprising insight: [insight]
+3. Surprising insight: [insight]"
 
-Would you like me to:
+Then immediately prompt the user to save for future sessions:
+
+"Where should I save these guidelines so they're available in future sessions?
+1. **Notion** -- I'll create a page titled 'Brand Voice Guidelines' in your workspace
+2. **Google Drive** -- I'll save a file named 'Brand Voice Guidelines' to your Drive
+3. **Both** -- Save to Notion and Google Drive
+4. **Skip** -- I won't save them (they'll only be available in this session)"
+
+**When saving:**
+- **Notion:** Create or update a page titled exactly **"Brand Voice Guidelines"** in the user's connected workspace. This exact title is required so the enforcement skill can find it later.
+- **Google Drive:** Create or update a file named exactly **"Brand Voice Guidelines"** in the user's Drive. Same naming convention for discovery.
+- Confirm the save was successful: "Guidelines saved to [Notion/Drive]. You can now use `/brand:enforce-voice` in any session and it will automatically load these guidelines."
+
+**If save fails** (connector not set up, permissions issue):
+- Tell the user what went wrong
+- Suggest they connect the service in Cowork settings
+- Remind them they can still use `/brand:enforce-voice` in the current session since the guidelines are in context
+
+After saving (or skipping), offer:
+"Would you like me to:
 1. Walk through the key findings
-2. Start using these to create content with /brand:enforce-voice
+2. Start creating content now with /brand:enforce-voice
 3. Refine any section"
-
-If Notion is connected, offer to save to the workspace.
-If Google Drive is connected, offer to save to a Brand folder.
 
 ## Privacy and Security
 

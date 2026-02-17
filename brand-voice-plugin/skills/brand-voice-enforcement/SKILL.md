@@ -12,15 +12,21 @@ Load the user's brand guidelines and apply them to every piece of content you ge
 
 ## Step 1: Load Brand Guidelines
 
-Check for existing brand guidelines in this order:
-1. `/mnt/user-data/outputs/brand-guidelines/` directory
-2. Connected Notion workspace (search for "Brand Guidelines" or "Brand Voice" pages)
-3. Google Drive folder labeled "Brand Guidelines"
+Find the user's brand guidelines using this sequence. Stop as soon as you find them:
 
-If no guidelines are found, stop and offer:
-- Convert existing brand documents: suggest `/brand:convert-docs`
-- Generate from sales calls: suggest `/brand:generate-guidelines`
-- Create a basic template to get started
+1. **Check conversation context** -- if brand guidelines were generated earlier in this session (via `/brand:generate-guidelines`), they are already in the conversation. Use them directly. Do not search externally.
+
+2. **Search Notion** (if connected) -- search for a page titled exactly **"Brand Voice Guidelines"**. If found, load its full content and use it as the guidelines.
+
+3. **Search Google Drive** (if connected) -- search for a file named exactly **"Brand Voice Guidelines"**. If found, load its full content and use it as the guidelines.
+
+4. **Ask the user** -- if none of the above worked, tell the user:
+   "I couldn't find your brand guidelines. You can:
+   - Paste a Notion or Google Drive link to your guidelines
+   - Run `/brand:generate-guidelines` to create them from your documents or sales calls
+   - Paste your guidelines directly into this chat"
+
+   Wait for the user to provide guidelines before proceeding.
 
 ## Step 2: Analyze the Content Request
 
@@ -151,10 +157,10 @@ Expect brand guidelines in this format:
 
 ### No Brand Guidelines Found
 Tell the user:
-"I don't see any brand guidelines yet. I can help you create them:
-1. Convert existing brand documents with /brand:convert-docs
-2. Generate guidelines from your sales calls with /brand:generate-guidelines
-3. Create a basic template to get started
+"I couldn't find your brand guidelines. You can:
+1. Paste a Notion or Google Drive link to your guidelines
+2. Run /brand:generate-guidelines to create them from documents or sales calls
+3. Paste your guidelines directly into this chat
 
 Which would you prefer?"
 
