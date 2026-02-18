@@ -62,7 +62,7 @@ Return the generated content to the parent skill — do not write files directly
 ```
 [Generated Content]
 
----
+***
 Brand Application Notes:
 - Voice: [attributes applied]
 - Tone: [formality / energy / technical depth settings and why]

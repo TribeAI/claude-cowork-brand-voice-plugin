@@ -47,6 +47,7 @@ Plugin has been restructured to match the Cowork plugin schema and expanded:
 
 From the repo root:
 ```bash
+rm -f brand-voice-plugin.zip
 cd brand-voice && zip -r ../brand-voice-plugin.zip . -x '.git/*' -x '.DS_Store'
 ```
 
