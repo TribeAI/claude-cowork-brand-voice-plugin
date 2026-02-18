@@ -1,11 +1,15 @@
 # Brand Voice Plugin
 
-Transforms scattered brand documents and conversation transcripts into enforceable AI guardrails. Searches across Confluence, Google Drive, Box, SharePoint, Slack, and conversation intelligence platforms like Gong and Granola to discover how your company actually communicates. Creates LLM-ready brand guidelines and continuously validates AI-generated content — from sales emails to marketing copy — ensuring every output matches your established voice, tone, and positioning. Surfaces open branding questions for team discussion when ambiguity is found.
+A [Tribe AI](https://tribeai.com) plugin for [Claude Cowork](https://claude.ai). Built as a Cowork launch partner.
+
+The brand knowledge that makes a company recognizable rarely lives anywhere useful. It's in a deck from 2022, a Confluence page no one's updated since the last rebrand, and the instincts of a few senior people who've been there long enough to just know. When sales reps are generating outreach with AI and new hires are producing content in their first week, that's exactly what gets lost.
+
+Brand Voice transforms scattered brand materials into enforceable AI guardrails. It searches across Confluence, Google Drive, Box, SharePoint, Slack, Gong, and Granola to discover how your company actually communicates — then creates LLM-ready brand guidelines and validates every piece of AI-generated content against them. Claude doesn't just write faster. It writes like you.
 
 ## Features
 
-### 1. Discover Brand (the differentiator)
-Autonomously search enterprise platforms to find all brand-related materials — style guides, pitch decks, email templates, sales call transcripts, and design systems. The discovery agent searches, categorizes, ranks, and reports on everything it finds.
+### 1. Brand Discovery
+Your brand knowledge is buried across Notion, Confluence, Google Drive, Gong, Slack, and years of sales calls and meeting transcripts. Brand Voice searches across all of it — style guides, pitch decks, email templates, transcripts, design systems — to distill your strongest brand signals into a single, current source of truth. Grounded in how your best people actually communicate, not just how a style guide from three years ago says you should.
 
 **Slash Command:** `/brand-voice:discover-brand`
 
@@ -15,7 +19,7 @@ Autonomously search enterprise platforms to find all brand-related materials —
 ```
 
 ### 2. Guideline Generation
-Generate comprehensive, LLM-ready brand guidelines from discovery reports, documents, transcripts, or any combination. Produces a "We Are / We Are Not" identity table, tone-by-context matrix, terminology guide, and confidence scores.
+Synthesizes your materials into LLM-ready guidelines: voice pillars, tone parameters, a "We Are / We Are Not" framework that gives Claude a clear operating boundary, and terminology standards that reflect real company language — not aspirational copy. The same guardrails that keep veteran teams on-brand mean new hires produce quality content in week one instead of month three.
 
 **Slash Command:** `/brand-voice:generate-guidelines`
 
@@ -25,7 +29,7 @@ Generate comprehensive, LLM-ready brand guidelines from discovery reports, docum
 ```
 
 ### 3. Brand Voice Enforcement
-Apply generated guidelines to all content creation. Voice stays constant while tone flexes by context — formality, energy, and technical depth adapt automatically for cold emails vs. enterprise proposals vs. LinkedIn posts.
+Every piece of AI-generated content — sales emails, proposals, marketing pages, press releases — gets written against your guidelines from the start. Voice stays constant while tone flexes by context: formality, energy, and technical depth adapt automatically for cold emails vs. enterprise proposals vs. LinkedIn posts. Tone drift and positioning gaps get caught before they reach a prospect or investor.
 
 **Slash Command:** `/brand-voice:enforce-voice`
 
@@ -60,11 +64,15 @@ These platforms are native Claude integrations — no MCP connector install need
 
 ## Quick Start
 
-1. Install the plugin in Claude Code or Cowork
-2. Connect at least one MCP server (Notion recommended as starting point)
-3. Run `/brand-voice:discover-brand` to find your brand materials
-4. Run `/brand-voice:generate-guidelines` to create guidelines from the discovery report
-5. Use `/brand-voice:enforce-voice` when creating sales or marketing content
+1. Install the plugin and open Claude Cowork
+2. Connect at least one platform (Notion recommended — it federates across Google Drive, SharePoint, Slack, and Jira)
+3. Run `/brand-voice:discover-brand` — Claude searches your connected knowledge bases for brand materials automatically
+4. Run `/brand-voice:generate-guidelines` to produce a durable set of guidelines from the discovery report
+5. Use `/brand-voice:enforce-voice` when creating content — sales emails, proposals, LinkedIn posts, anything customer-facing
+
+You can also point Claude at specific documents if you prefer. Either way, it walks you through the process.
+
+Brand Voice currently works at the individual level — team-wide enforcement is coming soon.
 
 ### Per-Project Settings
 
