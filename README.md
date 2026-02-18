@@ -39,13 +39,11 @@ Brand Voice works best when connected to your existing tools. After installing t
 | Connector | Purpose |
 |-----------|---------|
 | **Notion** | Store and retrieve brand guidelines, access meeting notes |
-| **Google Drive** | Access brand documents and save guidelines |
-| **Granola** | Pull meeting transcripts for voice analysis |
-| **Slack** | Share guidelines with your team |
-| **Canva** | Create on-brand visual content |
+| **Atlassian** | Store and retrieve brand guidelines, access meeting notes |
+| **Box** | Store and retrieve brand guidelines, access meeting notes |
 | **Figma** | Access brand design assets |
-| **Gamma** | Generate on-brand presentations |
-| **Linear** | Track brand guideline updates |
+| **Gong** | Generate on-brand presentations |
+| **Microsoft-365** | Track brand guideline updates |
 
 ## Usage
 
@@ -97,14 +95,18 @@ brand-voice-plugin/
 │   └── plugin.json                        # Plugin manifest
 ├── .mcp.json                              # MCP server connections
 ├── agents/                                # Specialized sub-agents
+│   ├── brand-discovery.md                 # Generates brand-aligned content
 │   ├── content-generation.md              # Generates brand-aligned content
 │   ├── conversation-analysis.md           # Analyzes sales call transcripts
 │   ├── document-analysis.md               # Parses and extracts from documents
 │   └── quality-assurance.md               # Validates content and guidelines
 ├── commands/                              # Slash commands
+│   ├── discover-brand.md                  # /brand:brand-discover
 │   ├── enforce-voice.md                   # /brand:enforce-voice
 │   └── generate-guidelines.md             # /brand:generate-guidelines
 └── skills/                                # Auto-triggered skills
+    ├── brand-discovery/
+    │   └── SKILL.md                       # Guideline generation logic
     ├── brand-voice-enforcement/
     │   └── SKILL.md                       # Brand enforcement logic
     └── guideline-generation/
