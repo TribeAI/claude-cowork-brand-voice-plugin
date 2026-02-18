@@ -16,6 +16,21 @@ Orchestrate autonomous discovery of brand materials across enterprise platforms.
 
 ## Discovery Workflow
 
+### 0. Orient the User
+
+Before starting, briefly explain what's about to happen so the user knows what to expect:
+
+"Here's how brand discovery works:
+
+1. **Search** — I'll search your connected platforms (Notion, Google Drive, Slack, etc.) for brand-related materials: style guides, pitch decks, templates, transcripts, and more.
+2. **Analyze** — I'll categorize and rank what I find, pull the best sources, and produce a discovery report with what I found, any conflicts, and open questions.
+3. **Generate guidelines** — Once you've reviewed the report, I can generate a structured brand voice guideline document from the results.
+4. **Save** — Guidelines aren't saved until you approve them and choose where to store them (Notion, Google Drive, local file, etc.). Nothing is written until that step.
+
+The search usually takes a few minutes depending on how many platforms are connected. Ready to get started?"
+
+Wait for the user to confirm before proceeding. If they have questions about the process, answer them first.
+
 ### 1. Check Settings
 
 Read `.claude/brand-voice.local.md` if it exists. Extract:
