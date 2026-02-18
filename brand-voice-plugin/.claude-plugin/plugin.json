@@ -1,9 +1,0 @@
-{
-  "name": "brand-voice-plugin",
-  "version": "1.0.0",
-  "description": "Enforce brand voice, convert messy brand docs to LLM-ready format, and generate brand guidelines from conversations",
-  "author": {
-    "name": "Tribe AI"
-  },
-  "keywords": ["sales", "marketing", "brand", "content-creation", "guidelines"]
-}
