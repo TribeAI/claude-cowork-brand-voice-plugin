@@ -51,6 +51,7 @@ When transcripts are available on Gong, use the Gong MCP tools to search for and
 ## Transcript Sources
 
 - **Gong** (via MCP): Search calls by date, outcome, participants, or tags. Retrieve transcripts and call analysis.
+- **Granola** (via MCP): List meetings, search by query, and retrieve full meeting transcripts and notes.
 - **Notion meeting notes** (via MCP): Search for meeting notes pages with transcript content.
 - **Manual uploads**: User-provided .txt, .json, or .md transcript files.
 - **Other sources**: Zoom, Google Meet, or other transcript formats uploaded as files.

@@ -195,6 +195,28 @@ Sales call transcripts reveal how the brand actually communicates in practice.
 - Look for consistent opening lines and closing patterns
 - Note objection handling language — reveals brand positioning under pressure
 
+## Granola (Meeting Intelligence)
+
+Meeting notes and transcripts from the AI notepad for meetings.
+
+### Query Patterns
+
+**Meeting search:**
+- Query for meetings related to: "brand", "positioning", "messaging"
+- List recent meetings and filter for customer-facing calls
+- Search for strategy sessions and brand planning meetings
+
+**Transcript retrieval:**
+- Get full transcripts from high-signal meetings
+- Look for recurring themes in meeting notes
+- Find meetings with key stakeholders (marketing leads, executives)
+
+### Tips
+- Granola captures both meeting notes and transcripts — both are valuable
+- Meeting notes often contain summarized brand decisions and action items
+- Look for recurring meeting series (weekly brand syncs, marketing standups)
+- Cross-reference Granola meeting notes with Gong call transcripts when both are available
+
 ## Figma (Brand Design Systems)
 
 Visual brand elements inform voice and tone indirectly.
@@ -229,12 +251,19 @@ Visual brand elements inform voice and tone indirectly.
 5. Search SharePoint/OneDrive for enterprise files
 6. Search Slack for brand discussions and decisions
 7. Search Gong for conversational brand patterns
-8. Review Figma for design-embedded brand guidelines
+8. Search Granola for meeting transcripts and notes
+9. Review Figma for design-embedded brand guidelines
 
 ### Avoiding Duplicates
 - Track source URLs to detect the same document across platforms
 - When the same content appears on multiple platforms, prefer the most recently updated version
 - Note when Notion federation returns results from other platforms to avoid double-searching
+
+### Recency Focus
+- Focus on content from the last 12 months for operational, conversational, and contextual sources
+- Only search further back when looking for explicit brand documents (style guides, brand books)
+- When results include older content, prefer the most recently updated version
+- Flag any non-AUTHORITATIVE source older than 12 months — it may reflect outdated positioning
 
 ### Handling No Results
 - If a platform returns zero results, try broader queries ("marketing", "sales")

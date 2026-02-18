@@ -19,8 +19,9 @@ Follow the guideline-generation skill instructions to:
 5. Surface open questions with agent recommendations for any ambiguity
 6. Present key findings and offer next steps
 7. Prompt to save guidelines for future sessions (Notion, Google Drive, Box, local file, or skip)
+   If guidelines already exist at the save destination, archive the previous version before saving (see guideline-generation skill step 8 for archive naming conventions).
 
 After generation, the skill will prompt to save the guidelines so `/brand-voice:enforce-voice` can automatically find them in future sessions.
 
 Supported document formats: PDF, PowerPoint, Word, Markdown, plain text.
-Supported transcript sources: Gong (MCP), Notion meeting notes, manual uploads.
+Supported transcript sources: Gong (MCP), Granola (MCP), Notion meeting notes, manual uploads.

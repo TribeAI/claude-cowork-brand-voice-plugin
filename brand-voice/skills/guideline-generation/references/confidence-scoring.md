@@ -67,6 +67,15 @@ The section is a best-effort recommendation. Team review strongly recommended.
 - **Medium**: Pattern observed in 3-4 calls or from a single top performer
 - **Low**: Pattern observed in 1-2 calls only
 
+### Transcript-Primary Scenarios
+
+When guidelines are generated primarily from conversational sources (no AUTHORITATIVE documents available):
+- Voice Attributes derived from 5+ transcripts = **Medium** (not Low)
+- Messaging Framework from consistent patterns across 5+ calls = **Medium**
+- Language Patterns weight increases from 10% to 20% in aggregate calculation (subtract 10% from Voice Attributes)
+
+Note this in the guideline metadata: "Guidelines generated primarily from conversational sources — team review recommended to formalize."
+
 ## Aggregate Confidence
 
 Calculate overall guideline confidence as the weighted average of section scores:

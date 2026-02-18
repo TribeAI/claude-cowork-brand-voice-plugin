@@ -1,8 +1,8 @@
 ---
-name: brand-discovery
+name: discover-brand
 description: >
   This skill orchestrates autonomous discovery of brand materials across enterprise
-  platforms (Notion, Confluence, Google Drive, Box, SharePoint, Figma, Gong, Slack).
+  platforms (Notion, Confluence, Google Drive, Box, SharePoint, Figma, Gong, Granola, Slack).
   It should be used when the user asks to "discover brand materials",
   "find brand documents", "search for brand guidelines", "audit brand content",
   "what brand materials do we have", "find our style guide", "where are our brand docs",
@@ -12,7 +12,7 @@ description: >
 
 # Brand Discovery
 
-Orchestrate autonomous discovery of brand materials across enterprise platforms. This skill coordinates the brand-discovery agent to search connected platforms (Notion, Confluence, Google Drive, Box, Microsoft 365, Figma, Gong, Slack), triage sources, and produce a structured discovery report with open questions.
+Orchestrate autonomous discovery of brand materials across enterprise platforms. This skill coordinates the discover-brand agent to search connected platforms (Notion, Confluence, Google Drive, Box, Microsoft 365, Figma, Gong, Granola, Slack), triage sources, and produce a structured discovery report with open questions.
 
 ## Discovery Workflow
 
@@ -20,25 +20,43 @@ Orchestrate autonomous discovery of brand materials across enterprise platforms.
 
 Read `.claude/brand-voice.local.md` if it exists. Extract:
 - Company name
-- Which platforms are enabled (notion, confluence, google-drive, box, microsoft-365, figma, gong, slack)
+- Which platforms are enabled (notion, confluence, google-drive, box, microsoft-365, figma, gong, granola, slack)
 - Search depth preference (standard or deep)
 - Max sources limit
 - Any known brand material locations listed under "Known Brand Materials"
 
 If no settings file exists, proceed with all connected platforms and standard search depth.
 
+### 1.5. Validate Platform Coverage
+
+Before confirming scope, check which platforms are actually connected and classify them:
+
+**Document platforms** (where brand guidelines, style guides, templates, and decks live):
+- Notion, Confluence, Google Drive, Box, Microsoft 365 (SharePoint/OneDrive)
+
+**Supplementary platforms** (valuable for patterns, but not where brand docs are stored):
+- Slack, Gong, Granola, Figma
+
+Apply these rules:
+
+1. **If zero document platforms are connected**: **Stop.** Tell the user: "You don't have any document storage platforms connected (Google Drive, SharePoint, Notion, Confluence, or Box). Brand guidelines and style guides almost always live on one of these. Please connect at least one before running discovery. Gong/Granola/Slack transcripts are valuable supplements but unlikely to contain formal brand documents."
+
+2. **If no Google Drive AND no Microsoft 365 AND no Box**: **Warn** (but proceed): "None of your primary file storage platforms (Google Drive, SharePoint, Box) are connected. Brand documents frequently live on these platforms. Discovery will proceed with [connected platforms], but results may have significant gaps. Consider connecting Google Drive or SharePoint."
+
+3. **If only one platform total is connected**: **Warn** (but proceed): "Only [platform] is connected. Discovery works best with 2+ platforms for cross-source validation. Results from a single platform will have lower confidence scores."
+
 ### 2. Confirm Scope with User
 
 Before launching discovery, confirm:
 - Which platforms to search (default: all connected)
-- Whether to include conversation transcripts (Gong) or just documents
+- Whether to include conversation transcripts (Gong, Granola) or just documents
 - Any known locations to prioritize
 
 Keep this brief — one question, not a questionnaire.
 
-### 3. Delegate to Brand Discovery Agent
+### 3. Delegate to Discover-Brand Agent
 
-Launch the brand-discovery agent via the Task tool. Provide:
+Launch the discover-brand agent via the Task tool. Provide:
 - Company name (from settings or user input)
 - Enabled platforms
 - Search depth
@@ -77,7 +95,7 @@ Every open question includes an agent recommendation. Present questions as "conf
 
 ## Integration with Other Skills
 
-- **Guideline Generation**: The discovery report is returned by the brand-discovery agent via the Task tool. Pass it directly to the guideline-generation skill as structured input, replacing the need for users to manually gather sources.
+- **Guideline Generation**: The discovery report is returned by the discover-brand agent via the Task tool. Pass it directly to the guideline-generation skill as structured input, replacing the need for users to manually gather sources.
 - **Brand Voice Enforcement**: Once guidelines are generated from discovery, enforcement uses them automatically.
 
 ## Error Handling

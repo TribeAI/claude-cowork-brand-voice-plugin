@@ -18,9 +18,9 @@ Generate comprehensive, LLM-ready brand voice guidelines from any combination of
 ## Inputs
 
 Accept any combination of:
-- **Discovery report** from the brand-discovery skill (structured, pre-triaged)
+- **Discovery report** from the discover-brand skill (structured, pre-triaged)
 - **Brand documents** uploaded or from connected platforms (PDF, PPTX, DOCX, MD, TXT)
-- **Conversation transcripts** from Gong, manual uploads, or Notion meeting notes
+- **Conversation transcripts** from Gong, Granola, manual uploads, or Notion meeting notes
 - **Direct user input** about their brand voice and values
 
 When a discovery report is provided, use it as the primary input — sources are already triaged and ranked. Supplement with additional analysis as needed.
@@ -110,6 +110,19 @@ Summarize key findings:
 - Number of open questions (if any)
 
 ### 8. Save for Future Sessions
+
+**Before saving, check for existing guidelines and archive them:**
+
+1. **Check if guidelines already exist** at the target save location
+2. **If they exist, archive the previous version:**
+   - **Notion**: Rename existing page to "Brand Voice Guidelines — Archived YYYY-MM-DD"
+   - **Google Drive**: Rename existing file to "Brand Voice Guidelines — Archived YYYY-MM-DD"
+   - **Box**: Rename existing file to "Brand Voice Guidelines — Archived YYYY-MM-DD"
+   - **Local file**: Rename `.claude/brand-voice-guidelines.md` to `.claude/brand-voice-guidelines-YYYY-MM-DD.md`
+3. **Save new guidelines** to the standard location (so enforcement can find them)
+4. **Inform the user**: "Previous guidelines archived as [name]. New guidelines saved."
+
+If the archive step fails (permissions, etc.), warn the user before overwriting and offer to skip or proceed.
 
 Immediately after presenting, prompt the user to choose a save destination so guidelines persist across sessions. Offer these options:
 

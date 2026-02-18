@@ -6,6 +6,8 @@ The complete structure for generated brand voice guidelines. Fill each section b
 
 ## Generation Metadata
 - Created: [date]
+- Version: [N] (incremented from previous if updating)
+- Replaces: [previous version date, if applicable]
 - Sources: [list of documents and/or conversations analyzed]
 - Documents processed: [N]
 - Conversations analyzed: [N]

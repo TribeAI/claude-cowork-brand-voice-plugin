@@ -1,10 +1,10 @@
 # Brand Voice Plugin
 
-Transforms scattered brand documents and conversation transcripts into enforceable AI guardrails. Searches across Confluence, Google Drive, Box, SharePoint, Slack, and conversation intelligence platforms like Gong to discover how your company actually communicates. Creates LLM-ready brand guidelines and continuously validates AI-generated content — from sales emails to marketing copy — ensuring every output matches your established voice, tone, and positioning. Surfaces open branding questions for team discussion when ambiguity is found.
+Transforms scattered brand documents and conversation transcripts into enforceable AI guardrails. Searches across Confluence, Google Drive, Box, SharePoint, Slack, and conversation intelligence platforms like Gong and Granola to discover how your company actually communicates. Creates LLM-ready brand guidelines and continuously validates AI-generated content — from sales emails to marketing copy — ensuring every output matches your established voice, tone, and positioning. Surfaces open branding questions for team discussion when ambiguity is found.
 
 ## Features
 
-### 1. Brand Discovery (the differentiator)
+### 1. Discover Brand (the differentiator)
 Autonomously search enterprise platforms to find all brand-related materials — style guides, pitch decks, email templates, sales call transcripts, and design systems. The discovery agent searches, categorizes, ranks, and reports on everything it finds.
 
 **Slash Command:** `/brand-voice:discover-brand`
@@ -47,6 +47,7 @@ When the plugin encounters ambiguity it can't resolve — conflicting documents,
 | **Microsoft 365** | `https://microsoft365.mcp.claude.com/mcp` | SharePoint, OneDrive, Outlook, Teams — enterprise document storage and email templates |
 | **Figma** | `https://mcp.figma.com/mcp` | Brand design systems — color, typography, design tokens inform voice |
 | **Gong** | `https://mcp.gong.io/mcp` | Enterprise conversation intelligence — sales call transcripts and analysis |
+| **Granola** | `https://mcp.granola.ai/mcp` | Meeting intelligence — transcripts and notes from sales, customer, and strategy meetings |
 
 ### Native Integrations
 
@@ -75,10 +76,10 @@ Copy `settings/brand-voice.local.md.example` to `.claude/brand-voice.local.md` i
 brand-voice/
 ├── .claude-plugin/
 │   └── plugin.json                              # Plugin manifest
-├── .mcp.json                                    # 6 MCP server connections
+├── .mcp.json                                    # 7 MCP server connections
 ├── README.md
 ├── agents/
-│   ├── brand-discovery.md                       # Autonomous platform search agent
+│   ├── discover-brand.md                         # Autonomous platform search agent
 │   ├── content-generation.md                    # Brand-aligned content creation
 │   ├── conversation-analysis.md                 # Sales call transcript analysis
 │   ├── document-analysis.md                     # Brand document parsing
@@ -90,7 +91,7 @@ brand-voice/
 ├── settings/
 │   └── brand-voice.local.md.example             # Per-project settings template
 └── skills/
-    ├── brand-discovery/
+    ├── discover-brand/
     │   ├── SKILL.md                             # Discovery orchestration
     │   └── references/
     │       ├── search-strategies.md             # Platform-specific query patterns

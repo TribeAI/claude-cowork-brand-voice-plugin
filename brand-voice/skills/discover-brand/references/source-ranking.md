@@ -106,6 +106,20 @@ More recent sources are more likely to reflect current brand voice.
 
 When two sources conflict, the more recent one wins unless the older source is explicitly marked as the "official" guide.
 
+Always prefer the most recent version of any document. When multiple sources cover the same topic, weight the newest one heavily. Flag any non-AUTHORITATIVE source older than 12 months in the discovery report.
+
+### Recency Cutoffs
+
+In addition to soft recency scoring, apply hard cutoffs to prevent stale content from polluting discovery:
+
+**AUTHORITATIVE sources**: No hard cutoff. Official brand guides remain valid regardless of age unless explicitly superseded by a newer version.
+
+**OPERATIONAL, CONVERSATIONAL, CONTEXTUAL sources**: Exclude from deep fetch if older than 12 months, with one exception: if zero sources in a category fall within the 12-month window, include the single most recent source from that category and flag it as potentially stale.
+
+**STALE sources**: Exclude entirely from deep fetch. Include in the discovery report for reference only.
+
+These cutoffs apply at the deep-fetch stage (Phase 3). All sources are still collected during broad discovery (Phase 1) and triage (Phase 2) — the cutoffs filter what gets fully retrieved and analyzed.
+
 ### 2. Explicitness (Weight: 25%)
 
 Sources that explicitly define brand voice outrank those that merely demonstrate it.
@@ -173,6 +187,47 @@ ranked_score = final_score × category_trust_weight
 - Consistency: 0.4 (single source)
 - Category: CONVERSATIONAL (0.6)
 - **Final: (1.0×0.30 + 0.2×0.25 + 0.4×0.20 + 0.7×0.15 + 0.4×0.10) × 0.6 = 0.345**
+
+## Adaptive Scoring: No Authoritative Sources
+
+When discovery finds **zero AUTHORITATIVE sources**, the scoring algorithm adapts to reflect that conversational and operational sources are the primary brand evidence.
+
+### Adjusted Trust Weights (No Authoritative Sources)
+
+| Category | Default Weight | Adapted Weight | Rationale |
+|----------|---------------|----------------|-----------|
+| AUTHORITATIVE | 1.0 | 1.0 | (n/a — none found) |
+| OPERATIONAL | 0.8 | 0.9 | Templates become primary explicit evidence |
+| CONVERSATIONAL | 0.6 | 0.85 | Transcripts are the best signal for how the brand actually communicates |
+| CONTEXTUAL | 0.3 | 0.4 | Design and competitive context more valuable without formal docs |
+| STALE | 0.1 | 0.2 | Even old docs matter more when nothing current exists |
+
+### Adjusted Explicitness Scoring (No Authoritative Sources)
+
+When no authoritative sources exist, conversational patterns carry more prescriptive weight:
+
+- **Score 0.2 → 0.5**: "Inferred from conversational patterns" — these ARE the brand evidence now
+- **Score 0.4 → 0.6**: "Implicit patterns in templates or examples"
+- Other explicitness scores unchanged
+
+### Example: Transcript Scoring With Adaptation
+
+**Source: "Top Performer Call — Enterprise Close" (Gong, 2 months ago)**
+- Recency: 1.0
+- Explicitness: 0.5 (adapted from 0.2 — patterns are primary evidence)
+- Authority: 0.4 (senior AE)
+- Specificity: 0.7 (specific phrases used)
+- Consistency: 0.4 (single source)
+- Category: CONVERSATIONAL (0.85 adapted)
+- **Adapted score: (1.0×0.30 + 0.5×0.25 + 0.4×0.20 + 0.7×0.15 + 0.4×0.10) × 0.85 = 0.552**
+
+This puts the transcript well above the 0.5 deep-fetch threshold, ensuring conversational sources meaningfully contribute to guideline generation.
+
+### When to Apply
+
+Apply adaptive scoring when:
+- Phase 2 triage produces zero AUTHORITATIVE sources
+- Flag in the discovery report: "No formal brand guidelines found — scoring adapted to weight conversational and operational sources higher"
 
 ## Triage Decision Criteria
 
