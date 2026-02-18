@@ -12,8 +12,6 @@ Plugin files live at repo root so Cowork can load directly from the git repo.
 - `commands/` — slash command entry points
 - `skills/` — skill definitions with `references/` subdirectories
 - `settings/` — per-project settings template
-- `PRDs/` — original product requirements
-- `demo/` — test fixtures, sample inputs, and validation criteria
 
 ## Branches
 
@@ -54,7 +52,7 @@ Plugin has been restructured to match the Cowork plugin schema and expanded:
 From the repo root:
 ```bash
 rm -f brand-voice-plugin.zip
-zip -r brand-voice-plugin.zip . -x '.git/*' -x '.DS_Store' -x 'demo/*' -x 'PRDs/*' -x 'CLAUDE.md' -x 'brand-voice-plugin.zip' -x '.claude/*'
+zip -r brand-voice-plugin.zip . -x '.git/*' -x '.DS_Store' -x 'CLAUDE.md' -x 'brand-voice-plugin.zip' -x '.claude/*'
 ```
 
 Upload `brand-voice-plugin.zip` via the Cowork plugin uploader, or point Cowork at the git repo directly.
