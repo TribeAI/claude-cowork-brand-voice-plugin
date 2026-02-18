@@ -115,7 +115,7 @@ brand-voice-plugin/
 
 ## Built By
 
-[Tribe AI](https://www.tribeai.com) -- we help enterprises deploy AI that actually works.
+[Tribe AI](https://www.tribeai.com) -- transforming organizations into AI-native enterprises.
 
 ## License
 
