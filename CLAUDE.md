@@ -4,8 +4,14 @@ Claude Cowork plugin by Tribe AI. Discovers brand materials across enterprise pl
 
 ## Repo Layout
 
-- `brand-voice/` — the plugin (this is what gets zipped and uploaded to Cowork)
-- `brand-voice-plugin.zip` — latest build for upload to Claude Desktop/Cowork plugin installer
+Plugin files live at repo root so Cowork can load directly from the git repo.
+
+- `.claude-plugin/plugin.json` — plugin manifest
+- `.mcp.json` — MCP server connections
+- `agents/` — autonomous agent definitions
+- `commands/` — slash command entry points
+- `skills/` — skill definitions with `references/` subdirectories
+- `settings/` — per-project settings template
 - `PRDs/` — original product requirements
 - `demo/` — test fixtures, sample inputs, and validation criteria
 
@@ -48,7 +54,7 @@ Plugin has been restructured to match the Cowork plugin schema and expanded:
 From the repo root:
 ```bash
 rm -f brand-voice-plugin.zip
-cd brand-voice && zip -r ../brand-voice-plugin.zip . -x '.git/*' -x '.DS_Store'
+zip -r brand-voice-plugin.zip . -x '.git/*' -x '.DS_Store' -x 'demo/*' -x 'PRDs/*' -x 'CLAUDE.md' -x 'brand-voice-plugin.zip' -x '.claude/*'
 ```
 
-Upload `brand-voice-plugin.zip` via the Cowork plugin uploader.
+Upload `brand-voice-plugin.zip` via the Cowork plugin uploader, or point Cowork at the git repo directly.
