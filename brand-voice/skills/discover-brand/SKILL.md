@@ -42,7 +42,7 @@ Read `.claude/brand-voice.local.md` if it exists. Extract:
 
 If no settings file exists, proceed with all connected platforms and standard search depth.
 
-### 1.5. Validate Platform Coverage
+### 2. Validate Platform Coverage
 
 Before confirming scope, check which platforms are actually connected and classify them:
 
@@ -60,7 +60,7 @@ Apply these rules:
 
 3. **If only one platform total is connected**: **Warn** (but proceed): "Only [platform] is connected. Discovery works best with 2+ platforms for cross-source validation. Results from a single platform will have lower confidence scores."
 
-### 2. Confirm Scope with User
+### 3. Confirm Scope with User
 
 Before launching discovery, confirm:
 - Which platforms to search (default: all connected)
@@ -69,7 +69,7 @@ Before launching discovery, confirm:
 
 Keep this brief — one question, not a questionnaire.
 
-### 3. Delegate to Discover-Brand Agent
+### 4. Delegate to Discover-Brand Agent
 
 Launch the discover-brand agent via the Task tool. Provide:
 - Company name (from settings or user input)
@@ -83,7 +83,7 @@ The agent executes the 4-phase discovery algorithm autonomously:
 3. **Deep Fetch** — retrieve and extract from top sources
 4. **Discovery Report** — structured output with open questions
 
-### 4. Present Discovery Report
+### 5. Present Discovery Report
 
 When the agent returns, present the report to the user with a summary:
 - Total sources found and analyzed
@@ -91,7 +91,7 @@ When the agent returns, present the report to the user with a summary:
 - Any conflicts between sources
 - Open questions requiring team input
 
-### 5. Offer Next Steps
+### 6. Offer Next Steps
 
 After presenting the report, offer:
 1. **Generate guidelines now** — chain to `/brand-voice:generate-guidelines` using discovery report as input

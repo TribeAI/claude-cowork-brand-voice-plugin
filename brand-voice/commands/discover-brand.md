@@ -11,10 +11,11 @@ Before doing anything else, briefly orient the user on what's about to happen: t
 
 Follow the discover-brand skill instructions to:
 1. Check `.claude/brand-voice.local.md` for settings (company name, enabled platforms, search depth)
-2. Briefly confirm scope with the user (which platforms, include transcripts?)
-3. Delegate to the discover-brand agent for autonomous 4-phase search
-4. Present the structured discovery report with sources, brand elements, conflicts, and open questions
-5. Offer next steps: generate guidelines, resolve open questions, save report, or expand search
+2. Validate platform coverage (stop if no document platforms, warn if gaps)
+3. Briefly confirm scope with the user (which platforms, include transcripts?)
+4. Delegate to the discover-brand agent for autonomous 4-phase search
+5. Present the structured discovery report with sources, brand elements, conflicts, and open questions
+6. Offer next steps: generate guidelines, resolve open questions, save report, or expand search
 
 **Platform validation:**
 - If **no platforms** are connected, inform the user which MCP servers the plugin supports (Notion, Atlassian Confluence, Box, Figma, Gong, Granola, Microsoft 365) and that Google Drive and Slack are available as native Claude integrations.

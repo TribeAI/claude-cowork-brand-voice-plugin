@@ -26,10 +26,7 @@ description: >
   </example>
 model: sonnet
 color: blue
-tools:
-  - Read
-  - Glob
-  - Grep
+# tools not restricted -- this agent needs MCP tools to fetch transcripts from Gong, Granola, etc.
 maxTurns: 15
 ---
 

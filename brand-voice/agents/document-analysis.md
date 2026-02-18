@@ -26,10 +26,7 @@ description: >
   </example>
 model: sonnet
 color: green
-tools:
-  - Read
-  - Glob
-  - Grep
+# tools not restricted -- this agent needs MCP tools to fetch documents from connected platforms
 maxTurns: 15
 ---
 

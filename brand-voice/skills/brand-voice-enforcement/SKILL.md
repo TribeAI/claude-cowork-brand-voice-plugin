@@ -22,9 +22,9 @@ Find the user's brand guidelines using this sequence. Stop as soon as you find t
 
 1. **Local config** — Read `.claude/brand-voice.local.md` for per-project brand context and settings. If it contains or references full guidelines, use them.
 
-2. **Local guidelines file** — Check for `.claude/brand-voice-guidelines.md` (saved by the guideline-generation skill). If found, load its full content. This is the local save path used when the user chose "Local file" during guideline generation.
+2. **Session context** — Check if brand guidelines were generated earlier in this session (via `/brand-voice:generate-guidelines`). If so, they are already in the conversation. Use them directly without searching externally. Session-generated guidelines are the freshest and reflect the user's most recent intent.
 
-3. **Session context** — Check if brand guidelines were generated earlier in this session (via `/brand-voice:generate-guidelines`). If so, they are already in the conversation. Use them directly without searching externally.
+3. **Local guidelines file** — Check for `.claude/brand-voice-guidelines.md` (saved by the guideline-generation skill). If found, load its full content. This is the local save path used when the user chose "Local file" during guideline generation.
 
 4. **Platform search** — Check each connected platform for a document titled exactly **"Brand Voice Guidelines"**: Notion, Google Drive, Box, SharePoint (stop as soon as found on any platform). This is the standard title used by the guideline-generation skill when saving.
 
