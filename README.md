@@ -1,6 +1,6 @@
 # Brand Voice Plugin
 
-A [Tribe AI](https://tribeai.com) plugin for [Claude Cowork](https://claude.ai). Built as a Cowork launch partner.
+A [Tribe AI](https://tribe.ai) plugin for Claude Cowork. Built as a Cowork launch partner.
 
 The brand knowledge that makes a company recognizable rarely lives anywhere useful. It's in a deck from 2022, a Confluence page no one's updated since the last rebrand, and the instincts of a few senior people who've been there long enough to just know. When sales reps are generating outreach with AI and new hires are producing content in their first week, that's exactly what gets lost.
 
