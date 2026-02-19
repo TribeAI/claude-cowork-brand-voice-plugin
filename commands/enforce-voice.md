@@ -3,13 +3,13 @@ description: Apply brand guidelines to content creation
 argument-hint: "<content request>"
 ---
 
-**Before doing anything else**, check whether the user has a working folder selected for this session. If there is no working folder, warn the user: "Heads up — you don't have a working folder selected. I can still apply brand voice from guidelines in this conversation, but I won't be able to load saved guidelines from a previous session. To use saved guidelines, select a working folder and re-run this command."
+**MANDATORY FIRST STEP — do this before anything else, including loading guidelines or processing the content request.** Check whether the user has a working folder selected for this session. You must verify this before starting any enforcement work. If there is no working folder, stop and warn the user: "You don't have a working folder selected. Without one, I can't load saved guidelines from a previous session, and any guidelines generated in this conversation won't be saved for future sessions either. Please select a working folder and re-run this command. If you'd like to proceed anyway (guidelines will only be usable in this session), let me know."  Wait for the user to confirm before continuing.
 
 Load the user's brand guidelines and apply them to the content request provided in $ARGUMENTS.
 
 Find brand guidelines using this sequence (stop as soon as found):
 1. Session context — check if guidelines were generated earlier in this conversation
-2. Local guidelines file — look for `brand-voice-guidelines.md` inside a `.claude/` directory. Do NOT assume relative paths resolve to the user's project; the agent may be running from a plugin cache directory. If the user's project path is known, check `<project-root>/.claude/brand-voice-guidelines.md`. Otherwise ask the user for the path.
+2. Local guidelines file — check for `.claude/brand-voice-guidelines.md` inside the user's working folder. Do NOT use a relative path from the agent's current working directory (in Cowork, the agent runs from a plugin cache directory). If no working folder is set, skip this step.
 3. If not found, ask the user to run `/brand-voice:discover-brand`, `/brand-voice:generate-guidelines`, or paste guidelines directly
 
 Once guidelines are loaded, follow the brand-voice-enforcement skill instructions to:

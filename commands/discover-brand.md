@@ -7,7 +7,7 @@ Discover brand materials across the user's connected enterprise platforms. Searc
 
 If $ARGUMENTS includes a company name, use it for targeted searches. If platforms are specified, limit search to those platforms.
 
-Before doing anything else, briefly orient the user on what's about to happen: the process will search their connected platforms, produce a discovery report, and then (optionally) generate and save brand guidelines. Nothing is saved until they explicitly approve and choose a save location. Keep the orientation to 2-3 sentences — don't recite the full workflow.
+Before doing anything else, briefly orient the user on what's about to happen: the process will search their connected platforms, produce a discovery report, and then (optionally) generate and save brand guidelines to `.claude/brand-voice-guidelines.md` in the working folder. Nothing is saved until they explicitly approve. Keep the orientation to 2-3 sentences — don't recite the full workflow.
 
 Follow the discover-brand skill instructions to:
 1. Check `.claude/brand-voice.local.md` for settings (company name, enabled platforms, search depth)

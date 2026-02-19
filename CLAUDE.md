@@ -33,7 +33,7 @@ Plugin has been restructured to match the Cowork plugin schema and expanded:
 ## Key Differences from Main
 
 1. **Brand discovery workflow** — new `/brand-voice:discover-brand` command with autonomous agent that searches all connected platforms, triages sources, and produces a structured report
-2. **Guideline persistence** — 5-tier loading sequence so enforce-voice finds saved guidelines across sessions (local config, local file, session context, platform search, ask user)
+2. **Guideline persistence** — guidelines save to `.claude/brand-voice-guidelines.md` in the user's working folder; enforce-voice loads from session context or that file
 3. **Microsoft 365 connector** — SharePoint/OneDrive MCP server added
 4. **Reference files** — detailed supporting docs (search strategies, source ranking, confidence scoring, before/after examples, tone model, guideline template) broken out of SKILL.md files
 5. **Commands split from skills** — separate `commands/` directory with proper frontmatter

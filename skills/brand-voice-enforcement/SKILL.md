@@ -22,7 +22,7 @@ Find the user's brand guidelines using this sequence. Stop as soon as you find t
 
 1. **Session context** — Check if brand guidelines were generated earlier in this session (via `/brand-voice:generate-guidelines`). If so, they are already in the conversation. Use them directly. Session-generated guidelines are the freshest and reflect the user's most recent intent.
 
-2. **Local guidelines file** — Look for a file named `brand-voice-guidelines.md` inside a `.claude/` directory. Do NOT assume the working directory is the user's project — the agent may be running from a plugin cache directory. Try common locations: the user's project root (if known), or the path saved from a previous guideline generation. If unsure, ask the user: "Do you have a saved brand guidelines file? What's the full path?"
+2. **Local guidelines file** — Check for `.claude/brand-voice-guidelines.md` inside the user's working folder. Do NOT use a relative path from the agent's current working directory — in Cowork, the agent runs from a plugin cache directory, not the user's project. Resolve the path relative to the user's working folder. If no working folder is set, skip this step.
 
 3. **Ask the user** — If none of the above found guidelines, tell the user:
    "I couldn't find your brand guidelines. You can:

@@ -111,12 +111,14 @@ Summarize key findings:
 
 ### 8. Save for Future Sessions
 
-**Important:** Do not use relative paths. The agent's working directory may not be the user's project root (especially in Cowork, where plugins run from a cache directory).
+The default save location is `.claude/brand-voice-guidelines.md` inside the user's working folder.
 
-1. **Ask the user for the save location.** Suggest saving to `<project-root>/.claude/brand-voice-guidelines.md` and ask them to confirm the project path. For example: "Where would you like me to save your brand guidelines? I'd suggest `<your-project>/.claude/brand-voice-guidelines.md` — what's the path to your project?"
-2. **Check if guidelines already exist** at the confirmed path
+**Important:** The agent's working directory may not be the user's project root (especially in Cowork, where plugins run from a plugin cache directory). Always resolve the path relative to the user's working folder, not the current working directory. If no working folder is set, skip the file save and tell the user guidelines will only be available in this conversation.
+
+1. **Resolve the save path.** The file MUST be saved to `.claude/brand-voice-guidelines.md` inside the user's working folder. Confirm the working folder path before writing.
+2. **Check if guidelines already exist** at that path
 3. **If they exist, archive the previous version:** Rename the existing file to `brand-voice-guidelines-YYYY-MM-DD.md` in the same directory (using today's date)
-4. **Save new guidelines** using the confirmed absolute path
+4. **Save new guidelines** to `.claude/brand-voice-guidelines.md` inside the working folder
 5. **Confirm to the user** with the full absolute path: "Guidelines saved to `<full-path>`. `/brand-voice:enforce-voice` will find them automatically in future sessions."
 
 The guidelines are also present in this conversation, so `/brand-voice:enforce-voice` can use them immediately without loading from file.
