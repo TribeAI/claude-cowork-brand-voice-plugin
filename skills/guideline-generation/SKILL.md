@@ -111,49 +111,17 @@ Summarize key findings:
 
 ### 8. Save for Future Sessions
 
-**Before saving, check for existing guidelines and archive them:**
+**Important:** Do not use relative paths. The agent's working directory may not be the user's project root (especially in Cowork, where plugins run from a cache directory).
 
-1. **Check if guidelines already exist** at the target save location
-2. **If they exist, archive the previous version:**
-   - **Notion**: Rename existing page to "Brand Voice Guidelines — Archived YYYY-MM-DD"
-   - **Google Drive**: Rename existing file to "Brand Voice Guidelines — Archived YYYY-MM-DD"
-   - **Box**: Rename existing file to "Brand Voice Guidelines — Archived YYYY-MM-DD"
-   - **Local file**: Rename `.claude/brand-voice-guidelines.md` to `.claude/brand-voice-guidelines-YYYY-MM-DD.md`
-3. **Save new guidelines** to the standard location (so enforcement can find them)
-4. **Inform the user**: "Previous guidelines archived as [name]. New guidelines saved."
+1. **Ask the user for the save location.** Suggest saving to `<project-root>/.claude/brand-voice-guidelines.md` and ask them to confirm the project path. For example: "Where would you like me to save your brand guidelines? I'd suggest `<your-project>/.claude/brand-voice-guidelines.md` — what's the path to your project?"
+2. **Check if guidelines already exist** at the confirmed path
+3. **If they exist, archive the previous version:** Rename the existing file to `brand-voice-guidelines-YYYY-MM-DD.md` in the same directory (using today's date)
+4. **Save new guidelines** using the confirmed absolute path
+5. **Confirm to the user** with the full absolute path: "Guidelines saved to `<full-path>`. `/brand-voice:enforce-voice` will find them automatically in future sessions."
 
-If the archive step fails (permissions, etc.), warn the user before overwriting and offer to skip or proceed.
+The guidelines are also present in this conversation, so `/brand-voice:enforce-voice` can use them immediately without loading from file.
 
-Immediately after presenting, prompt the user to choose a save destination so guidelines persist across sessions. Offer these options:
-
-1. **Notion** — Create a page titled "Brand Voice Guidelines" in the user's workspace
-2. **Google Drive** — Save a file named "Brand Voice Guidelines"
-3. **Box** — Save a file named "Brand Voice Guidelines"
-4. **Local file** — Write to `.claude/brand-voice-guidelines.md` in the project root
-5. **Skip** — Guidelines remain in conversation context only
-
-**When saving to Notion:**
-- Create or update a page titled exactly **"Brand Voice Guidelines"** in the user's connected workspace. This exact title is required so the enforcement skill can find it later via search.
-- Confirm success and inform the user that `/brand-voice:enforce-voice` will automatically load the saved guidelines in any future session.
-
-**When saving to Google Drive:**
-- Create or update a file named exactly **"Brand Voice Guidelines"** in the user's Google Drive. Same naming convention for discovery.
-- Confirm success and inform the user the enforcement skill will find them automatically.
-
-**When saving to Box:**
-- Create or update a file named exactly **"Brand Voice Guidelines"** in the user's Box. Same naming convention for discovery.
-- Confirm success and inform the user the enforcement skill will find them automatically.
-
-**When saving locally:**
-- Write the full guidelines to `.claude/brand-voice-guidelines.md` in the project root.
-- Confirm success and inform the user the enforcement skill will pick them up automatically in this project.
-
-**If save fails** (service not connected, permissions issue, etc.):
-- Tell the user what went wrong
-- Suggest an alternative save method
-- Remind the user the guidelines are still available in the current session
-
-After saving (or skipping), offer:
+After saving, offer:
 1. Walk through the guidelines section by section
 2. Start creating content with `/brand-voice:enforce-voice`
 3. Resolve open questions

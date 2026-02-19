@@ -20,15 +20,11 @@ Apply existing brand guidelines to all sales and marketing content generation. L
 
 Find the user's brand guidelines using this sequence. Stop as soon as you find them:
 
-1. **Local config** — Read `.claude/brand-voice.local.md` for per-project brand context and settings. If it contains or references full guidelines, use them.
+1. **Session context** — Check if brand guidelines were generated earlier in this session (via `/brand-voice:generate-guidelines`). If so, they are already in the conversation. Use them directly. Session-generated guidelines are the freshest and reflect the user's most recent intent.
 
-2. **Session context** — Check if brand guidelines were generated earlier in this session (via `/brand-voice:generate-guidelines`). If so, they are already in the conversation. Use them directly without searching externally. Session-generated guidelines are the freshest and reflect the user's most recent intent.
+2. **Local guidelines file** — Look for a file named `brand-voice-guidelines.md` inside a `.claude/` directory. Do NOT assume the working directory is the user's project — the agent may be running from a plugin cache directory. Try common locations: the user's project root (if known), or the path saved from a previous guideline generation. If unsure, ask the user: "Do you have a saved brand guidelines file? What's the full path?"
 
-3. **Local guidelines file** — Check for `.claude/brand-voice-guidelines.md` (saved by the guideline-generation skill). If found, load its full content. This is the local save path used when the user chose "Local file" during guideline generation.
-
-4. **Platform search** — Check each connected platform for a document titled exactly **"Brand Voice Guidelines"**: Notion, Google Drive, Box, SharePoint (stop as soon as found on any platform). This is the standard title used by the guideline-generation skill when saving.
-
-5. **Ask the user** — If none of the above found guidelines, tell the user:
+3. **Ask the user** — If none of the above found guidelines, tell the user:
    "I couldn't find your brand guidelines. You can:
    - Run `/brand-voice:discover-brand` to find brand materials across your platforms
    - Run `/brand-voice:generate-guidelines` to create guidelines from documents or transcripts
