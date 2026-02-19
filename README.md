@@ -62,6 +62,16 @@ These platforms are native Claude integrations — no MCP connector install need
 | **Google Drive** | Shared brand documents, style guides, marketing materials, Google Docs and Slides |
 | **Slack** | Brand discussions, channel searches, pinned brand guidelines, informal voice patterns |
 
+## Building
+
+To create a zip for uploading to Cowork:
+
+```
+npm run build
+```
+
+This produces `brand-voice-plugin.zip` at the repo root.
+
 ## Quick Start
 
 1. Install the plugin and open Claude Cowork

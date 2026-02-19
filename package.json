@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "claude-cowork-brand-voice-plugin",
+  "description": "Build tooling for the brand-voice Cowork plugin",
+  "scripts": {
+    "build": "zip -r brand-voice-plugin.zip .claude-plugin .mcp.json LICENSE README.md agents commands settings skills && echo 'Created brand-voice-plugin.zip'"
+  }
+}
