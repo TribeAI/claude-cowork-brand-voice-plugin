@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: claude-cowork-brand-voice-plugin
+  description: A Tribe AI plugin for Claude Cowork.
+  annotations:
+    github.com/project-slug: TribeAI/claude-cowork-brand-voice-plugin
+spec:
+  type: library
+  lifecycle: experimental
+  owner: user:default/carlos-tribe
